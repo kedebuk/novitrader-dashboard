@@ -1,36 +1,36 @@
 {
-  "updated": "2026-03-20 16:06 WIB",
-  "equity": 1477.57,
+  "updated": "2026-03-20 16:27 WIB",
+  "equity": 1489.77,
   "baseline": 1275,
   "naked": 0,
   "positions": [
     {
-      "pair": "XAG",
-      "side": "short",
-      "size": 18.0,
-      "entry": 73.12,
-      "mark": 72.9,
-      "upnl": 0.0395999999999998,
-      "sl": true,
-      "tp": true
-    },
-    {
       "pair": "ETH",
-      "side": "short",
+      "side": "long",
       "size": 0.01,
-      "entry": 2170.38,
-      "mark": 2153.65,
-      "upnl": 0.01673,
+      "entry": 2143.48,
+      "mark": 2142.33,
+      "upnl": -0.0011500000000001,
       "sl": true,
       "tp": true
     },
     {
       "pair": "SOL",
+      "side": "long",
+      "size": 0.03,
+      "entry": 89.18,
+      "mark": 88.7,
+      "upnl": -0.0144000000000001,
+      "sl": true,
+      "tp": true
+    },
+    {
+      "pair": "XAG",
       "side": "short",
-      "size": 0.01,
-      "entry": 90.21,
-      "mark": 89.45,
-      "upnl": 0.0075999999999999,
+      "size": 18.0,
+      "entry": 73.12,
+      "mark": 73.01,
+      "upnl": 0.0197999999999999,
       "sl": true,
       "tp": true
     },
@@ -39,8 +39,8 @@
       "side": "short",
       "size": 0.1,
       "entry": 126.64,
-      "mark": 127.09,
-      "upnl": -0.0450000000000003,
+      "mark": 126.11,
+      "upnl": 0.0530000000000001,
       "sl": true,
       "tp": true
     },
@@ -49,8 +49,8 @@
       "side": "short",
       "size": 3.16,
       "entry": 71294.94050632912,
-      "mark": 70876.2,
-      "upnl": 13.232200000000274,
+      "mark": 70492.4,
+      "upnl": 25.36028000000037,
       "sl": true,
       "tp": true
     },
@@ -59,18 +59,8 @@
       "side": "short",
       "size": 0.05,
       "entry": 138.744,
-      "mark": 140.09,
-      "upnl": -0.0673000000000002,
-      "sl": true,
-      "tp": true
-    },
-    {
-      "pair": "BNB",
-      "side": "long",
-      "size": 4.0,
-      "entry": 636.0,
-      "mark": 644.8,
-      "upnl": 0.3519999999999982,
+      "mark": 139.41,
+      "upnl": -0.0332999999999998,
       "sl": true,
       "tp": true
     }
@@ -86,27 +76,27 @@
     },
     {
       "pair": "ETH",
-      "trades": 16,
-      "wins": 7,
+      "trades": 17,
+      "wins": 8,
       "losses": 9,
-      "wr": 43.8,
-      "pnl": 10.13
+      "wr": 47.1,
+      "pnl": 10.15
     },
     {
       "pair": "SOL",
+      "trades": 5,
+      "wins": 3,
+      "losses": 2,
+      "wr": 60.0,
+      "pnl": -0.97
+    },
+    {
+      "pair": "BNB",
       "trades": 4,
       "wins": 2,
       "losses": 2,
       "wr": 50.0,
-      "pnl": -0.98
-    },
-    {
-      "pair": "BNB",
-      "trades": 3,
-      "wins": 1,
-      "losses": 2,
-      "wr": 33.3,
-      "pnl": 1.61
+      "pnl": 1.96
     },
     {
       "pair": "XAG",
@@ -260,6 +250,10 @@
     {
       "time": "03/20 16:06",
       "equity": 1477.57
+    },
+    {
+      "time": "03/20 16:27",
+      "equity": 1489.77
     }
   ],
   "lessons": [
@@ -735,6 +729,42 @@
       "pnl": -0.01,
       "reason": "SL",
       "time": "14:41 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3405638840741863424",
+      "pair": "ETH",
+      "side": "?",
+      "size": "0.01",
+      "entry": "?",
+      "exit": "?",
+      "pnl": 0.02,
+      "reason": "TP/Trail",
+      "time": "16:19 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3405630223124865024",
+      "pair": "SOL",
+      "side": "?",
+      "size": "0.01",
+      "entry": "?",
+      "exit": "?",
+      "pnl": 0.01,
+      "reason": "TP/Trail",
+      "time": "16:14 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3405614627930841088",
+      "pair": "BNB",
+      "side": "?",
+      "size": "4",
+      "entry": "?",
+      "exit": "?",
+      "pnl": 0.35,
+      "reason": "TP/Trail",
+      "time": "16:07 WIB",
       "lesson": ""
     }
   ]

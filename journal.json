@@ -382,5 +382,41 @@
     "reason": "SL",
     "time": "14:41 WIB",
     "lesson": ""
+  },
+  {
+    "bill_id": "3405638840741863424",
+    "pair": "ETH",
+    "side": "?",
+    "size": "0.01",
+    "entry": "?",
+    "exit": "?",
+    "pnl": 0.02,
+    "reason": "TP/Trail",
+    "time": "16:19 WIB",
+    "lesson": ""
+  },
+  {
+    "bill_id": "3405630223124865024",
+    "pair": "SOL",
+    "side": "?",
+    "size": "0.01",
+    "entry": "?",
+    "exit": "?",
+    "pnl": 0.01,
+    "reason": "TP/Trail",
+    "time": "16:14 WIB",
+    "lesson": ""
+  },
+  {
+    "bill_id": "3405614627930841088",
+    "pair": "BNB",
+    "side": "?",
+    "size": "4",
+    "entry": "?",
+    "exit": "?",
+    "pnl": 0.35,
+    "reason": "TP/Trail",
+    "time": "16:07 WIB",
+    "lesson": ""
   }
 ]
