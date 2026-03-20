@@ -286,5 +286,17 @@
     "reason": "SL",
     "time": "13:11 WIB",
     "lesson": ""
+  },
+  {
+    "bill_id": "3405317283486179328",
+    "pair": "XAG",
+    "side": "?",
+    "size": "18",
+    "entry": "?",
+    "exit": "?",
+    "pnl": 0.12,
+    "reason": "TP/Trail",
+    "time": "13:39 WIB",
+    "lesson": ""
   }
 ]
