@@ -1,26 +1,16 @@
 {
-  "updated": "2026-03-20 17:17 WIB",
-  "equity": 1488.7,
+  "updated": "2026-03-20 17:49 WIB",
+  "equity": 1472.91,
   "baseline": 1275,
   "naked": 0,
   "positions": [
-    {
-      "pair": "XAU",
-      "side": "long",
-      "size": 1071.0,
-      "entry": 4665.5,
-      "mark": 4665.4,
-      "upnl": -0.1071000000003896,
-      "sl": true,
-      "tp": true
-    },
     {
       "pair": "XAG",
       "side": "short",
       "size": 18.0,
       "entry": 71.5,
-      "mark": 71.75,
-      "upnl": -0.045,
+      "mark": 71.9,
+      "upnl": -0.072000000000001,
       "sl": true,
       "tp": true
     },
@@ -29,8 +19,8 @@
       "side": "long",
       "size": 1.0,
       "entry": 640.8,
-      "mark": 641.2,
-      "upnl": 0.0040000000000009,
+      "mark": 642.7,
+      "upnl": 0.0190000000000009,
       "sl": true,
       "tp": true
     },
@@ -39,8 +29,8 @@
       "side": "long",
       "size": 0.01,
       "entry": 2143.48,
-      "mark": 2136.8,
-      "upnl": -0.0066799999999998,
+      "mark": 2147.88,
+      "upnl": 0.0044000000000001,
       "sl": true,
       "tp": true
     },
@@ -49,8 +39,8 @@
       "side": "long",
       "size": 0.03,
       "entry": 89.18,
-      "mark": 88.86,
-      "upnl": -0.0096000000000002,
+      "mark": 89.24,
+      "upnl": 0.0017999999999996,
       "sl": true,
       "tp": true
     },
@@ -59,28 +49,8 @@
       "side": "short",
       "size": 0.1,
       "entry": 126.64,
-      "mark": 124.63,
-      "upnl": 0.2010000000000005,
-      "sl": true,
-      "tp": true
-    },
-    {
-      "pair": "BTC",
-      "side": "short",
-      "size": 3.16,
-      "entry": 71294.94050632912,
-      "mark": 70402.6,
-      "upnl": 28.19796,
-      "sl": true,
-      "tp": true
-    },
-    {
-      "pair": "MSTR",
-      "side": "short",
-      "size": 0.05,
-      "entry": 138.744,
-      "mark": 137.98,
-      "upnl": 0.0382000000000005,
+      "mark": 125.79,
+      "upnl": 0.0849999999999994,
       "sl": true,
       "tp": true
     }
@@ -88,11 +58,11 @@
   "winrate": [
     {
       "pair": "BTC",
-      "trades": 3,
-      "wins": 1,
+      "trades": 4,
+      "wins": 2,
       "losses": 2,
-      "wr": 33.3,
-      "pnl": -8.89
+      "wr": 50.0,
+      "pnl": 22.14
     },
     {
       "pair": "ETH",
@@ -136,11 +106,11 @@
     },
     {
       "pair": "MSTR",
-      "trades": 21,
-      "wins": 3,
-      "losses": 18,
-      "wr": 14.3,
-      "pnl": -0.6
+      "trades": 23,
+      "wins": 6,
+      "losses": 17,
+      "wr": 26.1,
+      "pnl": -0.38
     },
     {
       "pair": "COIN",
@@ -163,10 +133,6 @@
     {
       "name": "watchdog-fast",
       "status": "down"
-    },
-    {
-      "name": "wsfast",
-      "status": "up"
     },
     {
       "name": "onchain",
@@ -286,6 +252,10 @@
     {
       "time": "03/20 17:17",
       "equity": 1488.7
+    },
+    {
+      "time": "03/20 17:49",
+      "equity": 1472.91
     }
   ],
   "lessons": [
@@ -821,6 +791,54 @@
       "pnl": 0.13,
       "reason": "TP/Trail",
       "time": "17:04 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3405785745971027968",
+      "pair": "BTC",
+      "side": "?",
+      "size": "3.16",
+      "entry": "?",
+      "exit": "?",
+      "pnl": 31.03,
+      "reason": "TP/Trail",
+      "time": "17:32 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3405795546683744258",
+      "pair": "MSTR",
+      "side": "?",
+      "size": "0.03",
+      "entry": "?",
+      "exit": "?",
+      "pnl": 0.01,
+      "reason": "TP/Trail",
+      "time": "17:36 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3405795546683744257",
+      "pair": "MSTR",
+      "side": "?",
+      "size": "0.01",
+      "entry": "?",
+      "exit": "?",
+      "pnl": 0.0,
+      "reason": "TP/Trail",
+      "time": "17:36 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3405795546683744256",
+      "pair": "MSTR",
+      "side": "?",
+      "size": "0.01",
+      "entry": "?",
+      "exit": "?",
+      "pnl": 0.0,
+      "reason": "TP/Trail",
+      "time": "17:36 WIB",
       "lesson": ""
     }
   ]

@@ -442,5 +442,53 @@
     "reason": "TP/Trail",
     "time": "17:04 WIB",
     "lesson": ""
+  },
+  {
+    "bill_id": "3405785745971027968",
+    "pair": "BTC",
+    "side": "?",
+    "size": "3.16",
+    "entry": "?",
+    "exit": "?",
+    "pnl": 31.03,
+    "reason": "TP/Trail",
+    "time": "17:32 WIB",
+    "lesson": ""
+  },
+  {
+    "bill_id": "3405795546683744258",
+    "pair": "MSTR",
+    "side": "?",
+    "size": "0.03",
+    "entry": "?",
+    "exit": "?",
+    "pnl": 0.01,
+    "reason": "TP/Trail",
+    "time": "17:36 WIB",
+    "lesson": ""
+  },
+  {
+    "bill_id": "3405795546683744257",
+    "pair": "MSTR",
+    "side": "?",
+    "size": "0.01",
+    "entry": "?",
+    "exit": "?",
+    "pnl": 0.0,
+    "reason": "TP/Trail",
+    "time": "17:36 WIB",
+    "lesson": ""
+  },
+  {
+    "bill_id": "3405795546683744256",
+    "pair": "MSTR",
+    "side": "?",
+    "size": "0.01",
+    "entry": "?",
+    "exit": "?",
+    "pnl": 0.0,
+    "reason": "TP/Trail",
+    "time": "17:36 WIB",
+    "lesson": ""
   }
 ]
