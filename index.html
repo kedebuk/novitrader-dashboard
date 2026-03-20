@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NoviTrader Dashboard</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background: #0a0e17;
+            color: #e0e6ed;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .header {
+            text-align: center;
+            padding: 20px 0;
+            border-bottom: 1px solid #1e2a3a;
+            margin-bottom: 24px;
+        }
+        .header h1 {
+            font-size: 28px;
+            color: #00d4aa;
+            letter-spacing: 1px;
+        }
+        .header .subtitle {
+            color: #6b7c93;
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        .header .updated {
+            color: #4a5568;
+            font-size: 12px;
+            margin-top: 8px;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 16px;
+            margin-bottom: 24px;
+        }
+        .metric-card {
+            background: #111827;
+            border: 1px solid #1e2a3a;
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+        }
+        .metric-card .label {
+            font-size: 12px;
+            color: #6b7c93;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        .metric-card .value {
+            font-size: 32px;
+            font-weight: 700;
+            margin-top: 8px;
+        }
+        .metric-card .change {
+            font-size: 14px;
+            margin-top: 4px;
+        }
+        .green { color: #00d4aa; }
+        .red { color: #ff4757; }
+        .yellow { color: #ffa502; }
+        .gray { color: #6b7c93; }
+
+        .section-title {
+            font-size: 18px;
+            color: #00d4aa;
+            margin-bottom: 12px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #1e2a3a;
+        }
+
+        .positions-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 24px;
+        }
+        .positions-table th {
+            background: #111827;
+            color: #6b7c93;
+            font-size: 11px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 12px 16px;
+            text-align: left;
+            border-bottom: 1px solid #1e2a3a;
+        }
+        .positions-table td {
+            padding: 12px 16px;
+            border-bottom: 1px solid #1a2332;
+            font-size: 14px;
+        }
+        .positions-table tr:hover {
+            background: #111827;
+        }
+        .badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 11px;
+            font-weight: 600;
+        }
+        .badge-long { background: #00d4aa22; color: #00d4aa; }
+        .badge-short { background: #ff475722; color: #ff4757; }
+        .badge-sl { background: #00d4aa22; color: #00d4aa; }
+        .badge-naked { background: #ff475722; color: #ff4757; }
+
+        .wr-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+        .wr-card {
+            background: #111827;
+            border: 1px solid #1e2a3a;
+            border-radius: 8px;
+            padding: 16px;
+        }
+        .wr-card .pair-name {
+            font-size: 16px;
+            font-weight: 700;
+        }
+        .wr-card .wr-value {
+            font-size: 24px;
+            font-weight: 700;
+            margin-top: 4px;
+        }
+        .wr-card .wr-detail {
+            font-size: 12px;
+            color: #6b7c93;
+            margin-top: 4px;
+        }
+        .wr-bar {
+            height: 4px;
+            background: #1e2a3a;
+            border-radius: 2px;
+            margin-top: 8px;
+            overflow: hidden;
+        }
+        .wr-bar-fill {
+            height: 100%;
+            border-radius: 2px;
+        }
+
+        .services {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 24px;
+        }
+        .svc-badge {
+            padding: 6px 12px;
+            border-radius: 6px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        .svc-up { background: #00d4aa22; color: #00d4aa; }
+        .svc-down { background: #ff475722; color: #ff4757; }
+
+        .equity-chart {
+            background: #111827;
+            border: 1px solid #1e2a3a;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+            height: 300px;
+            position: relative;
+        }
+        .equity-chart canvas {
+            width: 100% !important;
+            height: 100% !important;
+        }
+
+        .log-section {
+            background: #111827;
+            border: 1px solid #1e2a3a;
+            border-radius: 12px;
+            padding: 20px;
+            margin-bottom: 24px;
+        }
+        .log-entry {
+            font-family: 'JetBrains Mono', 'Fira Code', monospace;
+            font-size: 12px;
+            padding: 4px 0;
+            color: #8892a6;
+            border-bottom: 1px solid #0a0e17;
+        }
+
+        .footer {
+            text-align: center;
+            color: #4a5568;
+            font-size: 11px;
+            padding: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>📊 NoviTrader Dashboard</h1>
+        <div class="subtitle">OKX Live Trading Bot Monitor</div>
+        <div class="updated" id="lastUpdate">Loading...</div>
+    </div>
+
+    <div class="metrics" id="metricsGrid"></div>
+
+    <h3 class="section-title">📈 Equity History</h3>
+    <div class="equity-chart">
+        <canvas id="equityChart"></canvas>
+    </div>
+
+    <h3 class="section-title">💼 Open Positions</h3>
+    <table class="positions-table" id="positionsTable">
+        <thead>
+            <tr>
+                <th>Pair</th>
+                <th>Side</th>
+                <th>Size</th>
+                <th>Entry</th>
+                <th>Mark</th>
+                <th>uPnL</th>
+                <th>SL</th>
+                <th>TP</th>
+            </tr>
+        </thead>
+        <tbody id="positionsBody"></tbody>
+    </table>
+
+    <h3 class="section-title">🎯 Winrate per Pair</h3>
+    <div class="wr-grid" id="wrGrid"></div>
+
+    <h3 class="section-title">⚙️ Services</h3>
+    <div class="services" id="servicesGrid"></div>
+
+    <h3 class="section-title">📋 Recent Activity</h3>
+    <div class="log-section" id="logSection"></div>
+
+    <div class="footer">
+        NoviTrader &copy; 2026 — Auto-updated every 20min via heartbeat
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
+    <script>
+        let chart = null;
+
+        async function loadData() {
+            try {
+                const r = await fetch('data.json?' + Date.now());
+                const d = await r.json();
+                renderAll(d);
+            } catch(e) {
+                document.getElementById('lastUpdate').textContent = 'Error loading data: ' + e.message;
+            }
+        }
+
+        function renderAll(d) {
+            // Last update
+            document.getElementById('lastUpdate').textContent = 'Last update: ' + d.updated;
+
+            // Metrics
+            const pnlChange = d.equity - 1275;
+            const pnlPct = (pnlChange / 1275 * 100).toFixed(1);
+            const totalUPnL = d.positions.reduce((s, p) => s + p.upnl, 0);
+            const metricsHtml = `
+                <div class="metric-card">
+                    <div class="label">Equity</div>
+                    <div class="value green">$${d.equity.toFixed(2)}</div>
+                    <div class="change ${pnlChange >= 0 ? 'green' : 'red'}">
+                        ${pnlChange >= 0 ? '+' : ''}$${pnlChange.toFixed(2)} (${pnlPct}%)
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="label">Baseline</div>
+                    <div class="value gray">$1,275</div>
+                    <div class="change gray">Starting capital</div>
+                </div>
+                <div class="metric-card">
+                    <div class="label">Open Positions</div>
+                    <div class="value">${d.positions.length}</div>
+                    <div class="change ${totalUPnL >= 0 ? 'green' : 'red'}">
+                        uPnL: ${totalUPnL >= 0 ? '+' : ''}$${totalUPnL.toFixed(2)}
+                    </div>
+                </div>
+                <div class="metric-card">
+                    <div class="label">Naked Positions</div>
+                    <div class="value ${d.naked === 0 ? 'green' : 'red'}">${d.naked}</div>
+                    <div class="change ${d.naked === 0 ? 'green' : 'red'}">
+                        ${d.naked === 0 ? '✅ All protected' : '⚠️ NEEDS SL/TP'}
+                    </div>
+                </div>
+            `;
+            document.getElementById('metricsGrid').innerHTML = metricsHtml;
+
+            // Positions
+            let posHtml = '';
+            for (const p of d.positions) {
+                const sideClass = p.side === 'long' ? 'badge-long' : 'badge-short';
+                const slBadge = p.sl ? '<span class="badge badge-sl">✅</span>' : '<span class="badge badge-naked">❌</span>';
+                const tpBadge = p.tp ? '<span class="badge badge-sl">✅</span>' : '<span class="badge badge-naked">❌</span>';
+                posHtml += `
+                    <tr>
+                        <td><strong>${p.pair}</strong></td>
+                        <td><span class="badge ${sideClass}">${p.side.toUpperCase()}</span></td>
+                        <td>${p.size}ct</td>
+                        <td>$${p.entry.toFixed(2)}</td>
+                        <td>$${p.mark.toFixed(2)}</td>
+                        <td class="${p.upnl >= 0 ? 'green' : 'red'}">$${p.upnl >= 0 ? '+' : ''}${p.upnl.toFixed(2)}</td>
+                        <td>${slBadge}</td>
+                        <td>${tpBadge}</td>
+                    </tr>`;
+            }
+            document.getElementById('positionsBody').innerHTML = posHtml || '<tr><td colspan="8" style="text-align:center;color:#6b7c93">No open positions</td></tr>';
+
+            // Winrate
+            let wrHtml = '';
+            for (const w of d.winrate) {
+                const wr = w.wr !== null ? w.wr : 0;
+                const barColor = wr >= 40 ? '#00d4aa' : wr >= 30 ? '#ffa502' : '#ff4757';
+                const pnlColor = w.pnl >= 0 ? 'green' : 'red';
+                wrHtml += `
+                    <div class="wr-card">
+                        <div class="pair-name">${w.pair}</div>
+                        <div class="wr-value" style="color:${barColor}">${w.wr !== null ? w.wr + '%' : '—'}</div>
+                        <div class="wr-detail">${w.trades}T | ${w.wins}W/${w.losses}L | <span class="${pnlColor}">$${w.pnl >= 0 ? '+' : ''}${w.pnl.toFixed(2)}</span></div>
+                        <div class="wr-bar"><div class="wr-bar-fill" style="width:${wr}%;background:${barColor}"></div></div>
+                    </div>`;
+            }
+            document.getElementById('wrGrid').innerHTML = wrHtml;
+
+            // Services
+            let svcHtml = '';
+            for (const s of d.services) {
+                const cls = s.status === 'up' ? 'svc-up' : 'svc-down';
+                const icon = s.status === 'up' ? '✅' : '❌';
+                svcHtml += `<span class="svc-badge ${cls}">${icon} ${s.name}</span>`;
+            }
+            document.getElementById('servicesGrid').innerHTML = svcHtml;
+
+            // Logs
+            let logHtml = '';
+            for (const l of (d.logs || []).slice(-20)) {
+                logHtml += `<div class="log-entry">${l}</div>`;
+            }
+            document.getElementById('logSection').innerHTML = logHtml || '<div class="log-entry">No recent activity</div>';
+
+            // Equity chart
+            renderChart(d.equity_history || []);
+        }
+
+        function renderChart(history) {
+            const ctx = document.getElementById('equityChart').getContext('2d');
+            if (chart) chart.destroy();
+
+            const labels = history.map(h => h.time);
+            const data = history.map(h => h.equity);
+
+            chart = new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels,
+                    datasets: [{
+                        label: 'Equity ($)',
+                        data,
+                        borderColor: '#00d4aa',
+                        backgroundColor: 'rgba(0, 212, 170, 0.1)',
+                        fill: true,
+                        tension: 0.3,
+                        pointRadius: 2,
+                        borderWidth: 2,
+                    }, {
+                        label: 'Baseline',
+                        data: data.map(() => 1275),
+                        borderColor: '#4a5568',
+                        borderDash: [5, 5],
+                        pointRadius: 0,
+                        borderWidth: 1,
+                        fill: false,
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { labels: { color: '#6b7c93' } }
+                    },
+                    scales: {
+                        x: { ticks: { color: '#4a5568', maxTicksLimit: 12 }, grid: { color: '#1e2a3a' } },
+                        y: { ticks: { color: '#4a5568' }, grid: { color: '#1e2a3a' } }
+                    }
+                }
+            });
+        }
+
+        loadData();
+        setInterval(loadData, 60000); // Refresh every 60s
+    </script>
+</body>
+</html>
