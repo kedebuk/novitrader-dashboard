@@ -1,16 +1,26 @@
 {
-  "updated": "2026-03-20 12:54 WIB",
-  "equity": 1484.66,
+  "updated": "2026-03-20 13:23 WIB",
+  "equity": 1482.01,
   "baseline": 1275,
   "naked": 0,
   "positions": [
+    {
+      "pair": "CRCL",
+      "side": "short",
+      "size": 0.1,
+      "entry": 126.64,
+      "mark": 126.0,
+      "upnl": 0.0640000000000001,
+      "sl": true,
+      "tp": true
+    },
     {
       "pair": "XAG",
       "side": "short",
       "size": 18.0,
       "entry": 72.56,
-      "mark": 72.63,
-      "upnl": -0.0125999999999988,
+      "mark": 72.65,
+      "upnl": -0.0162000000000006,
       "sl": true,
       "tp": true
     },
@@ -19,8 +29,8 @@
       "side": "short",
       "size": 0.04,
       "entry": 70908.1,
-      "mark": 70563.5,
-      "upnl": 0.1378400000000023,
+      "mark": 70458.8,
+      "upnl": 0.1797200000000012,
       "sl": true,
       "tp": true
     },
@@ -29,18 +39,8 @@
       "side": "long",
       "size": 531.0,
       "entry": 4700.5,
-      "mark": 4692.4,
-      "upnl": -4.3011000000001935,
-      "sl": true,
-      "tp": true
-    },
-    {
-      "pair": "CRCL",
-      "side": "long",
-      "size": 0.1,
-      "entry": 128.64,
-      "mark": 127.29,
-      "upnl": -0.134999999999998,
+      "mark": 4688.0,
+      "upnl": -6.6375,
       "sl": true,
       "tp": true
     },
@@ -49,8 +49,8 @@
       "side": "short",
       "size": 0.05,
       "entry": 138.744,
-      "mark": 139.23,
-      "upnl": -0.0242999999999995,
+      "mark": 138.84,
+      "upnl": -0.0048000000000002,
       "sl": true,
       "tp": true
     },
@@ -59,8 +59,8 @@
       "side": "long",
       "size": 4.0,
       "entry": 636.0,
-      "mark": 643.0,
-      "upnl": 0.28,
+      "mark": 641.2,
+      "upnl": 0.2080000000000018,
       "sl": true,
       "tp": true
     }
@@ -108,11 +108,11 @@
     },
     {
       "pair": "CRCL",
-      "trades": 15,
+      "trades": 16,
       "wins": 6,
-      "losses": 9,
-      "wr": 40.0,
-      "pnl": 0.81
+      "losses": 10,
+      "wr": 37.5,
+      "pnl": 0.61
     },
     {
       "pair": "MSTR",
@@ -170,7 +170,7 @@
     }
   ],
   "logs": [
-    "[stockcom] [12:53:51] [XAG] \ud83d\udd34 OPENED SHORT 18.0ct @ $72.56 SL:$73.65 TP:$71.83 R:R 1:0.7 [BB-REV: lower touch \u2192 SHORT (fade bounce) $72.66]"
+    "[stockcom] [13:17:05] [CRCL] \ud83d\udd34 OPENED SHORT 0.1ct @ $126.64 SL:$128.54 TP:$122.84 R:R 1:2.0 [Breakout LOW $126.62]"
   ],
   "equity_history": [
     {
@@ -184,6 +184,10 @@
     {
       "time": "03/20 12:54",
       "equity": 1484.66
+    },
+    {
+      "time": "03/20 13:23",
+      "equity": 1482.01
     }
   ],
   "lessons": [
@@ -551,6 +555,18 @@
       "pnl": -0.01,
       "reason": "SL",
       "time": "12:48 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3405260333796892672",
+      "pair": "CRCL",
+      "side": "?",
+      "size": "0.1",
+      "entry": "?",
+      "exit": "?",
+      "pnl": -0.2,
+      "reason": "SL",
+      "time": "13:11 WIB",
       "lesson": ""
     }
   ]

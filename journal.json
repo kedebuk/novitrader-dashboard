@@ -274,5 +274,17 @@
     "reason": "SL",
     "time": "12:48 WIB",
     "lesson": ""
+  },
+  {
+    "bill_id": "3405260333796892672",
+    "pair": "CRCL",
+    "side": "?",
+    "size": "0.1",
+    "entry": "?",
+    "exit": "?",
+    "pnl": -0.2,
+    "reason": "SL",
+    "time": "13:11 WIB",
+    "lesson": ""
   }
 ]
