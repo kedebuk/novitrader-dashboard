@@ -1,6 +1,6 @@
 {
-  "updated": "2026-03-20 12:44 WIB",
-  "equity": 1491.74,
+  "updated": "2026-03-20 12:47 WIB",
+  "equity": 1490.92,
   "baseline": 1275,
   "naked": 0,
   "positions": [
@@ -9,8 +9,8 @@
       "side": "short",
       "size": 0.04,
       "entry": 70908.1,
-      "mark": 70665.3,
-      "upnl": 0.0971200000000012,
+      "mark": 70628.3,
+      "upnl": 0.1119200000000012,
       "sl": true,
       "tp": true
     },
@@ -19,8 +19,8 @@
       "side": "long",
       "size": 531.0,
       "entry": 4700.5,
-      "mark": 4704.0,
-      "upnl": 1.8585,
+      "mark": 4702.5,
+      "upnl": 1.062,
       "sl": true,
       "tp": true
     },
@@ -29,8 +29,8 @@
       "side": "long",
       "size": 0.1,
       "entry": 128.64,
-      "mark": 127.21,
-      "upnl": -0.1429999999999993,
+      "mark": 127.19,
+      "upnl": -0.1449999999999989,
       "sl": true,
       "tp": true
     },
@@ -39,8 +39,8 @@
       "side": "long",
       "size": 18.0,
       "entry": 73.89,
-      "mark": 73.21,
-      "upnl": -0.1224000000000012,
+      "mark": 73.1,
+      "upnl": -0.1422000000000011,
       "sl": true,
       "tp": true
     },
@@ -49,8 +49,8 @@
       "side": "short",
       "size": 0.05,
       "entry": 138.744,
-      "mark": 139.4,
-      "upnl": -0.0328000000000003,
+      "mark": 139.23,
+      "upnl": -0.0242999999999995,
       "sl": true,
       "tp": true
     },
@@ -174,6 +174,342 @@
     {
       "time": "03/20 12:44",
       "equity": 1491.74
+    },
+    {
+      "time": "03/20 12:47",
+      "equity": 1490.92
+    }
+  ],
+  "lessons": [
+    {
+      "date": "2026-03-17",
+      "text": "WS_URL pointed to DEMO endpoint \u2014 all price data was fake. Root cause of ALL phantom SLs, price drift, wrong fills. Always verify endpoints."
+    },
+    {
+      "date": "2026-03-17",
+      "text": "Race condition in MAX_POS check: 2 goroutines opened CRV simultaneously (175ct SHORT + 169ct LONG). Added re-check before order placement."
+    },
+    {
+      "date": "2026-03-18",
+      "text": "sync_loop recalculated SL from hardcoded sl_pct=0.02, moving SL closer and triggering immediate SL on restart. Never overwrite existing SL with hardcoded defaults."
+    },
+    {
+      "date": "2026-03-18",
+      "text": "ISP di Indonesia (Internet Positif) blocks OKX API. DNS hijacking redirects ws.okx.com \u2192 36.86.63.185. Solution: DNS monkey-patch + WARP SOCKS5 proxy."
+    },
+    {
+      "date": "2026-03-19",
+      "text": "ADX 14 di crypto selalu 40-54 di kondisi normal. Threshold 25 permanently block semua entry. Raised to 40."
+    },
+    {
+      "date": "2026-03-19",
+      "text": "XAG WR 22% over 32 trades \u2014 strategy bb_tight tidak cocok. Flip ke reverse juga gagal. Disabled."
+    },
+    {
+      "date": "2026-03-20",
+      "text": "wr_audit.py bug: no rate limit delay (8 calls berturut \u2192 OKX 429) + counting all bills including fees (subType 3,4) instead of only closes (5,6). Fixed."
+    },
+    {
+      "date": "2026-03-20",
+      "text": "MSTR WR 14% (3W/18L) post-reverse, WR 5% pre-reverse. EMA triple strategy incompatible with MSTR. Disabled permanently."
+    },
+    {
+      "date": "2026-03-20",
+      "text": "R:R terlalu rendah (1:1.3) dengan WR 40% = barely breakeven. Raised TP dari 65% ke 75% range (Bot 1) dan 2% ke 3% (Bot 2). MIN_NET_RR raised 1.5 \u2192 2.0."
+    }
+  ],
+  "improvements": [
+    {
+      "date": "2026-03-17",
+      "type": "BUGFIX",
+      "text": "Bug #1-#21: calc_size leverage, sync SL/TP, race condition, smart_round, close order sz, int truncation, trail state reset, EMA filter removal, range seed, re-entry cooldown"
+    },
+    {
+      "date": "2026-03-17",
+      "type": "STRATEGY",
+      "text": "Changed pairs STRK/FIL/SHIB/ETH/CRV \u2192 BTC/ETH/SOL/BNB. Strategy: EMA trend-following \u2192 Range Edge + RSI Reversal"
+    },
+    {
+      "date": "2026-03-18",
+      "type": "CRITICAL",
+      "text": "Bug #33: WS_URL fixed from demo to live endpoint. Root cause of ALL prior anomalies."
+    },
+    {
+      "date": "2026-03-18",
+      "type": "BUGFIX",
+      "text": "Bug #34-#45: Rolling 4h range, real 1m candle RSI via REST, ADX trend filter, trail+server SL race, Telegram HTML, min SL distance, BTC correlation, open_time sync, server-side close journalling, ADX 25\u219240, DNS hijacking fix"
+    },
+    {
+      "date": "2026-03-19",
+      "type": "NEW BOT",
+      "text": "Bot 2 (ws_stockcom.py) launched \u2014 COIN/CRCL/XAG/MSTR. Bot 3 (ws_crash_recovery.py) launched \u2014 ETH/SOL/DOGE/LINK/AVAX/ADA/SUI crash recovery"
+    },
+    {
+      "date": "2026-03-19",
+      "type": "STRATEGY",
+      "text": "XAG disabled (WR 22%). MSTR flipped to reverse. Strategy flip logic implemented. wr_audit.py created."
+    },
+    {
+      "date": "2026-03-20",
+      "type": "INFRA",
+      "text": "WARP SOCKS5 proxy deployed (socks5://127.0.0.1:40000). ALL REST API calls routed through WARP. SL/TP no longer disappear."
+    },
+    {
+      "date": "2026-03-20",
+      "type": "BUGFIX",
+      "text": "wr_audit.py fixed: added rate limit delay + filter subType 5,6 only. CRCL/MSTR data now accurate."
+    },
+    {
+      "date": "2026-03-20",
+      "type": "STRATEGY",
+      "text": "MSTR disabled (WR 14% post-reverse). R:R raised: TP 65\u219275% range, MIN_NET_RR 1.5\u21922.0 (Bot 1). TP 2%\u21923% (Bot 2)."
+    },
+    {
+      "date": "2026-03-20",
+      "type": "NEW",
+      "text": "GitHub Pages dashboard launched: real-time equity, positions, WR, services, lessons, journal"
+    }
+  ],
+  "journal": [
+    {
+      "bill_id": "3404640716279848965",
+      "pair": "XAG",
+      "side": "?",
+      "size": "6",
+      "entry": "?",
+      "exit": "?",
+      "pnl": -0.06,
+      "reason": "SL",
+      "time": "08:03 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3404640716279848964",
+      "pair": "XAG",
+      "side": "?",
+      "size": "2",
+      "entry": "?",
+      "exit": "?",
+      "pnl": -0.02,
+      "reason": "SL",
+      "time": "08:03 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3404640716279848963",
+      "pair": "XAG",
+      "side": "?",
+      "size": "1",
+      "entry": "?",
+      "exit": "?",
+      "pnl": -0.01,
+      "reason": "SL",
+      "time": "08:03 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3404640716279848962",
+      "pair": "XAG",
+      "side": "?",
+      "size": "1",
+      "entry": "?",
+      "exit": "?",
+      "pnl": -0.01,
+      "reason": "SL",
+      "time": "08:03 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3404640716279848961",
+      "pair": "XAG",
+      "side": "?",
+      "size": "3",
+      "entry": "?",
+      "exit": "?",
+      "pnl": -0.03,
+      "reason": "SL",
+      "time": "08:03 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3404640716279848960",
+      "pair": "XAG",
+      "side": "?",
+      "size": "5",
+      "entry": "?",
+      "exit": "?",
+      "pnl": -0.05,
+      "reason": "SL",
+      "time": "08:03 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3404361565585088512",
+      "pair": "XAG",
+      "side": "?",
+      "size": "18",
+      "entry": "?",
+      "exit": "?",
+      "pnl": -0.2,
+      "reason": "SL",
+      "time": "05:44 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3404278443640168448",
+      "pair": "XAG",
+      "side": "?",
+      "size": "18",
+      "entry": "?",
+      "exit": "?",
+      "pnl": -0.19,
+      "reason": "SL",
+      "time": "05:03 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3403925901450223616",
+      "pair": "XAG",
+      "side": "?",
+      "size": "18",
+      "entry": "?",
+      "exit": "?",
+      "pnl": 0.19,
+      "reason": "TP/Trail",
+      "time": "02:08 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3404821576111169536",
+      "pair": "CRCL",
+      "side": "?",
+      "size": "0.1",
+      "entry": "?",
+      "exit": "?",
+      "pnl": -0.2,
+      "reason": "SL",
+      "time": "09:33 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3404683765945016320",
+      "pair": "CRCL",
+      "side": "?",
+      "size": "0.1",
+      "entry": "?",
+      "exit": "?",
+      "pnl": -0.19,
+      "reason": "SL",
+      "time": "08:24 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3403996993963499520",
+      "pair": "CRCL",
+      "side": "?",
+      "size": "0.1",
+      "entry": "?",
+      "exit": "?",
+      "pnl": 0.25,
+      "reason": "TP/Trail",
+      "time": "02:43 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3403898649849176064",
+      "pair": "CRCL",
+      "side": "?",
+      "size": "0.1",
+      "entry": "?",
+      "exit": "?",
+      "pnl": 0.22,
+      "reason": "TP/Trail",
+      "time": "01:54 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3403981381992259584",
+      "pair": "MSTR",
+      "side": "?",
+      "size": "0.05",
+      "entry": "?",
+      "exit": "?",
+      "pnl": 0.07,
+      "reason": "TP/Trail",
+      "time": "02:35 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3403913120231530497",
+      "pair": "MSTR",
+      "side": "?",
+      "size": "0.04",
+      "entry": "?",
+      "exit": "?",
+      "pnl": -0.08,
+      "reason": "SL",
+      "time": "02:01 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3403913120231530496",
+      "pair": "MSTR",
+      "side": "?",
+      "size": "0.01",
+      "entry": "?",
+      "exit": "?",
+      "pnl": -0.02,
+      "reason": "SL",
+      "time": "02:01 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3403716430425825280",
+      "pair": "MSTR",
+      "side": "?",
+      "size": "0.05",
+      "entry": "?",
+      "exit": "?",
+      "pnl": 0.06,
+      "reason": "TP/Trail",
+      "time": "00:24 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3403677224118853632",
+      "pair": "MSTR",
+      "side": "?",
+      "size": "0.12",
+      "entry": "?",
+      "exit": "?",
+      "pnl": -0.17,
+      "reason": "SL",
+      "time": "00:04 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3403677224085299201",
+      "pair": "MSTR",
+      "side": "?",
+      "size": "0.01",
+      "entry": "?",
+      "exit": "?",
+      "pnl": -0.01,
+      "reason": "SL",
+      "time": "00:04 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3403677224085299200",
+      "pair": "MSTR",
+      "side": "?",
+      "size": "0.01",
+      "entry": "?",
+      "exit": "?",
+      "pnl": -0.01,
+      "reason": "SL",
+      "time": "00:04 WIB",
+      "lesson": ""
     }
   ]
 }

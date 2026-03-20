@@ -1,0 +1,38 @@
+[
+  {
+    "date": "2026-03-17",
+    "text": "WS_URL pointed to DEMO endpoint — all price data was fake. Root cause of ALL phantom SLs, price drift, wrong fills. Always verify endpoints."
+  },
+  {
+    "date": "2026-03-17",
+    "text": "Race condition in MAX_POS check: 2 goroutines opened CRV simultaneously (175ct SHORT + 169ct LONG). Added re-check before order placement."
+  },
+  {
+    "date": "2026-03-18",
+    "text": "sync_loop recalculated SL from hardcoded sl_pct=0.02, moving SL closer and triggering immediate SL on restart. Never overwrite existing SL with hardcoded defaults."
+  },
+  {
+    "date": "2026-03-18",
+    "text": "ISP di Indonesia (Internet Positif) blocks OKX API. DNS hijacking redirects ws.okx.com → 36.86.63.185. Solution: DNS monkey-patch + WARP SOCKS5 proxy."
+  },
+  {
+    "date": "2026-03-19",
+    "text": "ADX 14 di crypto selalu 40-54 di kondisi normal. Threshold 25 permanently block semua entry. Raised to 40."
+  },
+  {
+    "date": "2026-03-19",
+    "text": "XAG WR 22% over 32 trades — strategy bb_tight tidak cocok. Flip ke reverse juga gagal. Disabled."
+  },
+  {
+    "date": "2026-03-20",
+    "text": "wr_audit.py bug: no rate limit delay (8 calls berturut → OKX 429) + counting all bills including fees (subType 3,4) instead of only closes (5,6). Fixed."
+  },
+  {
+    "date": "2026-03-20",
+    "text": "MSTR WR 14% (3W/18L) post-reverse, WR 5% pre-reverse. EMA triple strategy incompatible with MSTR. Disabled permanently."
+  },
+  {
+    "date": "2026-03-20",
+    "text": "R:R terlalu rendah (1:1.3) dengan WR 40% = barely breakeven. Raised TP dari 65% ke 75% range (Bot 1) dan 2% ke 3% (Bot 2). MIN_NET_RR raised 1.5 → 2.0."
+  }
+]

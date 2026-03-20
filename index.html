@@ -193,6 +193,69 @@
             border-bottom: 1px solid #0a0e17;
         }
 
+        .lesson-card {
+            background: #0d1520;
+            border-left: 3px solid #ffa502;
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            border-radius: 0 8px 8px 0;
+        }
+        .lesson-card .lesson-date {
+            font-size: 11px;
+            color: #4a5568;
+        }
+        .lesson-card .lesson-text {
+            font-size: 13px;
+            color: #e0e6ed;
+            margin-top: 4px;
+        }
+        .improvement-card {
+            background: #0d1520;
+            border-left: 3px solid #00d4aa;
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            border-radius: 0 8px 8px 0;
+        }
+        .improvement-card .imp-tag {
+            display: inline-block;
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 3px;
+            background: #00d4aa22;
+            color: #00d4aa;
+            margin-right: 6px;
+        }
+        .improvement-card .imp-text {
+            font-size: 13px;
+            color: #e0e6ed;
+            margin-top: 4px;
+        }
+        .journal-card {
+            background: #0d1520;
+            padding: 12px 16px;
+            margin-bottom: 8px;
+            border-radius: 8px;
+            border-left: 3px solid #6b7c93;
+        }
+        .journal-card.win { border-left-color: #00d4aa; }
+        .journal-card.loss { border-left-color: #ff4757; }
+        .journal-card .j-header {
+            display: flex;
+            justify-content: space-between;
+            font-size: 13px;
+        }
+        .journal-card .j-detail {
+            font-size: 12px;
+            color: #6b7c93;
+            margin-top: 4px;
+        }
+        .journal-card .j-lesson {
+            font-size: 12px;
+            color: #ffa502;
+            margin-top: 4px;
+            font-style: italic;
+        }
+
         .footer {
             text-align: center;
             color: #4a5568;
@@ -240,6 +303,15 @@
 
     <h3 class="section-title">📋 Recent Activity</h3>
     <div class="log-section" id="logSection"></div>
+
+    <h3 class="section-title">🧠 Lessons Learned Today</h3>
+    <div class="log-section" id="lessonsSection"></div>
+
+    <h3 class="section-title">🔧 Improvements Applied</h3>
+    <div class="log-section" id="improvementsSection"></div>
+
+    <h3 class="section-title">📖 Trade Journal</h3>
+    <div class="log-section" id="journalSection"></div>
 
     <div class="footer">
         NoviTrader &copy; 2026 — Auto-updated every 20min via heartbeat
@@ -348,6 +420,47 @@
                 logHtml += `<div class="log-entry">${l}</div>`;
             }
             document.getElementById('logSection').innerHTML = logHtml || '<div class="log-entry">No recent activity</div>';
+
+            // Lessons
+            let lessonsHtml = '';
+            for (const l of (d.lessons || [])) {
+                lessonsHtml += `
+                    <div class="lesson-card">
+                        <div class="lesson-date">${l.date || ''}</div>
+                        <div class="lesson-text">${l.text}</div>
+                    </div>`;
+            }
+            document.getElementById('lessonsSection').innerHTML = lessonsHtml || '<div class="log-entry" style="color:#6b7c93">No lessons recorded today</div>';
+
+            // Improvements
+            let impHtml = '';
+            for (const i of (d.improvements || [])) {
+                impHtml += `
+                    <div class="improvement-card">
+                        <span class="imp-tag">${i.type || 'fix'}</span>
+                        <span style="font-size:11px;color:#4a5568">${i.date || ''}</span>
+                        <div class="imp-text">${i.text}</div>
+                    </div>`;
+            }
+            document.getElementById('improvementsSection').innerHTML = impHtml || '<div class="log-entry" style="color:#6b7c93">No improvements today</div>';
+
+            // Trade Journal
+            let jHtml = '';
+            for (const t of (d.journal || [])) {
+                const cls = t.pnl >= 0 ? 'win' : 'loss';
+                const pnlStr = t.pnl >= 0 ? `+$${t.pnl.toFixed(2)}` : `-$${Math.abs(t.pnl).toFixed(2)}`;
+                const pnlColor = t.pnl >= 0 ? 'green' : 'red';
+                jHtml += `
+                    <div class="journal-card ${cls}">
+                        <div class="j-header">
+                            <span><strong>${t.pair}</strong> ${t.side.toUpperCase()} ${t.size || ''}ct</span>
+                            <span class="${pnlColor}">${pnlStr}</span>
+                        </div>
+                        <div class="j-detail">Entry: $${t.entry} → Exit: $${t.exit} | ${t.reason || ''} | ${t.time || ''}</div>
+                        ${t.lesson ? `<div class="j-lesson">💡 ${t.lesson}</div>` : ''}
+                    </div>`;
+            }
+            document.getElementById('journalSection').innerHTML = jHtml || '<div class="log-entry" style="color:#6b7c93">No trades closed today</div>';
 
             // Equity chart
             renderChart(d.equity_history || []);

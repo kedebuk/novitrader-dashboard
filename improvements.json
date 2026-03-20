@@ -1,0 +1,52 @@
+[
+  {
+    "date": "2026-03-17",
+    "type": "BUGFIX",
+    "text": "Bug #1-#21: calc_size leverage, sync SL/TP, race condition, smart_round, close order sz, int truncation, trail state reset, EMA filter removal, range seed, re-entry cooldown"
+  },
+  {
+    "date": "2026-03-17",
+    "type": "STRATEGY",
+    "text": "Changed pairs STRK/FIL/SHIB/ETH/CRV → BTC/ETH/SOL/BNB. Strategy: EMA trend-following → Range Edge + RSI Reversal"
+  },
+  {
+    "date": "2026-03-18",
+    "type": "CRITICAL",
+    "text": "Bug #33: WS_URL fixed from demo to live endpoint. Root cause of ALL prior anomalies."
+  },
+  {
+    "date": "2026-03-18",
+    "type": "BUGFIX",
+    "text": "Bug #34-#45: Rolling 4h range, real 1m candle RSI via REST, ADX trend filter, trail+server SL race, Telegram HTML, min SL distance, BTC correlation, open_time sync, server-side close journalling, ADX 25→40, DNS hijacking fix"
+  },
+  {
+    "date": "2026-03-19",
+    "type": "NEW BOT",
+    "text": "Bot 2 (ws_stockcom.py) launched — COIN/CRCL/XAG/MSTR. Bot 3 (ws_crash_recovery.py) launched — ETH/SOL/DOGE/LINK/AVAX/ADA/SUI crash recovery"
+  },
+  {
+    "date": "2026-03-19",
+    "type": "STRATEGY",
+    "text": "XAG disabled (WR 22%). MSTR flipped to reverse. Strategy flip logic implemented. wr_audit.py created."
+  },
+  {
+    "date": "2026-03-20",
+    "type": "INFRA",
+    "text": "WARP SOCKS5 proxy deployed (socks5://127.0.0.1:40000). ALL REST API calls routed through WARP. SL/TP no longer disappear."
+  },
+  {
+    "date": "2026-03-20",
+    "type": "BUGFIX",
+    "text": "wr_audit.py fixed: added rate limit delay + filter subType 5,6 only. CRCL/MSTR data now accurate."
+  },
+  {
+    "date": "2026-03-20",
+    "type": "STRATEGY",
+    "text": "MSTR disabled (WR 14% post-reverse). R:R raised: TP 65→75% range, MIN_NET_RR 1.5→2.0 (Bot 1). TP 2%→3% (Bot 2)."
+  },
+  {
+    "date": "2026-03-20",
+    "type": "NEW",
+    "text": "GitHub Pages dashboard launched: real-time equity, positions, WR, services, lessons, journal"
+  }
+]
