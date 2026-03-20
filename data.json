@@ -1,16 +1,26 @@
 {
-  "updated": "2026-03-20 16:48 WIB",
-  "equity": 1487.96,
+  "updated": "2026-03-20 17:10 WIB",
+  "equity": 1491.06,
   "baseline": 1275,
   "naked": 0,
   "positions": [
+    {
+      "pair": "BNB",
+      "side": "long",
+      "size": 1.0,
+      "entry": 640.8,
+      "mark": 640.5,
+      "upnl": -0.0029999999999995,
+      "sl": true,
+      "tp": true
+    },
     {
       "pair": "ETH",
       "side": "long",
       "size": 0.01,
       "entry": 2143.48,
-      "mark": 2141.11,
-      "upnl": -0.0023699999999999,
+      "mark": 2134.09,
+      "upnl": -0.0093899999999999,
       "sl": true,
       "tp": true
     },
@@ -19,8 +29,8 @@
       "side": "long",
       "size": 0.03,
       "entry": 89.18,
-      "mark": 88.91,
-      "upnl": -0.0081000000000003,
+      "mark": 88.7,
+      "upnl": -0.0144000000000001,
       "sl": true,
       "tp": true
     },
@@ -29,8 +39,8 @@
       "side": "short",
       "size": 0.1,
       "entry": 126.64,
-      "mark": 125.55,
-      "upnl": 0.1090000000000003,
+      "mark": 124.65,
+      "upnl": 0.1989999999999995,
       "sl": true,
       "tp": true
     },
@@ -39,8 +49,8 @@
       "side": "short",
       "size": 3.16,
       "entry": 71294.94050632912,
-      "mark": 70510.7,
-      "upnl": 24.782000000000274,
+      "mark": 70394.9,
+      "upnl": 28.44128000000037,
       "sl": true,
       "tp": true
     },
@@ -49,8 +59,8 @@
       "side": "short",
       "size": 0.05,
       "entry": 138.744,
-      "mark": 139.0,
-      "upnl": -0.0128,
+      "mark": 138.08,
+      "upnl": 0.0331999999999994,
       "sl": true,
       "tp": true
     }
@@ -90,11 +100,11 @@
     },
     {
       "pair": "XAG",
-      "trades": 20,
-      "wins": 6,
+      "trades": 19,
+      "wins": 5,
       "losses": 14,
-      "wr": 30.0,
-      "pnl": -0.31
+      "wr": 26.3,
+      "pnl": -0.49
     },
     {
       "pair": "CRCL",
@@ -203,9 +213,7 @@
       "status": "up"
     }
   ],
-  "logs": [
-    "[stockcom] [16:45:27] [XAG] Position closed server-side (SL/TP hit). Hold: 72m"
-  ],
+  "logs": [],
   "equity_history": [
     {
       "time": "03/20 12:44",
@@ -250,6 +258,10 @@
     {
       "time": "03/20 16:48",
       "equity": 1487.96
+    },
+    {
+      "time": "03/20 17:10",
+      "equity": 1491.06
     }
   ],
   "lessons": [
@@ -773,6 +785,18 @@
       "pnl": 0.13,
       "reason": "TP/Trail",
       "time": "16:44 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3405729475423444992",
+      "pair": "XAG",
+      "side": "?",
+      "size": "18",
+      "entry": "?",
+      "exit": "?",
+      "pnl": 0.13,
+      "reason": "TP/Trail",
+      "time": "17:04 WIB",
       "lesson": ""
     }
   ]
