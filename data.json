@@ -1,16 +1,26 @@
 {
-  "updated": "2026-03-20 13:46 WIB",
-  "equity": 1464.6,
+  "updated": "2026-03-20 13:50 WIB",
+  "equity": 1464.37,
   "baseline": 1275,
   "naked": 0,
   "positions": [
+    {
+      "pair": "XAG",
+      "side": "short",
+      "size": 18.0,
+      "entry": 71.42,
+      "mark": 71.66,
+      "upnl": -0.0431999999999991,
+      "sl": true,
+      "tp": true
+    },
     {
       "pair": "CRCL",
       "side": "short",
       "size": 0.1,
       "entry": 126.64,
-      "mark": 125.53,
-      "upnl": 0.1109999999999999,
+      "mark": 125.52,
+      "upnl": 0.1120000000000005,
       "sl": true,
       "tp": true
     },
@@ -19,8 +29,8 @@
       "side": "short",
       "size": 0.04,
       "entry": 70908.1,
-      "mark": 70429.8,
-      "upnl": 0.1913200000000012,
+      "mark": 70449.7,
+      "upnl": 0.1833600000000035,
       "sl": true,
       "tp": true
     },
@@ -29,8 +39,8 @@
       "side": "short",
       "size": 0.05,
       "entry": 138.744,
-      "mark": 138.77,
-      "upnl": -0.0013000000000005,
+      "mark": 138.78,
+      "upnl": -0.0018000000000001,
       "sl": true,
       "tp": true
     },
@@ -39,8 +49,8 @@
       "side": "long",
       "size": 4.0,
       "entry": 636.0,
-      "mark": 641.8,
-      "upnl": 0.2319999999999982,
+      "mark": 642.1,
+      "upnl": 0.2440000000000009,
       "sl": true,
       "tp": true
     }
@@ -80,11 +90,11 @@
     },
     {
       "pair": "XAG",
-      "trades": 22,
-      "wins": 7,
-      "losses": 15,
-      "wr": 31.8,
-      "pnl": -0.06
+      "trades": 18,
+      "wins": 6,
+      "losses": 12,
+      "wr": 33.3,
+      "pnl": -0.01
     },
     {
       "pair": "CRCL",
@@ -173,6 +183,10 @@
       "status": "down"
     },
     {
+      "name": "gridscalp",
+      "status": "up"
+    },
+    {
       "name": "crashbot",
       "status": "up"
     },
@@ -189,7 +203,9 @@
       "status": "up"
     }
   ],
-  "logs": [],
+  "logs": [
+    "[stockcom] [13:48:30] [XAG] \ud83d\udd34 OPENED SHORT 18.0ct @ $71.42 SL:$72.49 TP:$70.71 R:R 1:0.7 [BB-REV: lower touch \u2192 SHORT (fade bounce) $71.47]"
+  ],
   "equity_history": [
     {
       "time": "03/20 12:44",
@@ -210,6 +226,10 @@
     {
       "time": "03/20 13:46",
       "equity": 1464.6
+    },
+    {
+      "time": "03/20 13:50",
+      "equity": 1464.37
     }
   ],
   "lessons": [
