@@ -1,16 +1,26 @@
 {
-  "updated": "2026-03-20 12:47 WIB",
-  "equity": 1490.92,
+  "updated": "2026-03-20 12:54 WIB",
+  "equity": 1484.66,
   "baseline": 1275,
   "naked": 0,
   "positions": [
+    {
+      "pair": "XAG",
+      "side": "short",
+      "size": 18.0,
+      "entry": 72.56,
+      "mark": 72.63,
+      "upnl": -0.0125999999999988,
+      "sl": true,
+      "tp": true
+    },
     {
       "pair": "BTC",
       "side": "short",
       "size": 0.04,
       "entry": 70908.1,
-      "mark": 70628.3,
-      "upnl": 0.1119200000000012,
+      "mark": 70563.5,
+      "upnl": 0.1378400000000023,
       "sl": true,
       "tp": true
     },
@@ -19,8 +29,8 @@
       "side": "long",
       "size": 531.0,
       "entry": 4700.5,
-      "mark": 4702.5,
-      "upnl": 1.062,
+      "mark": 4692.4,
+      "upnl": -4.3011000000001935,
       "sl": true,
       "tp": true
     },
@@ -29,18 +39,8 @@
       "side": "long",
       "size": 0.1,
       "entry": 128.64,
-      "mark": 127.19,
-      "upnl": -0.1449999999999989,
-      "sl": true,
-      "tp": true
-    },
-    {
-      "pair": "XAG",
-      "side": "long",
-      "size": 18.0,
-      "entry": 73.89,
-      "mark": 73.1,
-      "upnl": -0.1422000000000011,
+      "mark": 127.29,
+      "upnl": -0.134999999999998,
       "sl": true,
       "tp": true
     },
@@ -59,8 +59,8 @@
       "side": "long",
       "size": 4.0,
       "entry": 636.0,
-      "mark": 643.3,
-      "upnl": 0.2919999999999982,
+      "mark": 643.0,
+      "upnl": 0.28,
       "sl": true,
       "tp": true
     }
@@ -100,11 +100,11 @@
     },
     {
       "pair": "XAG",
-      "trades": 24,
+      "trades": 22,
       "wins": 6,
-      "losses": 18,
-      "wr": 25.0,
-      "pnl": -0.07
+      "losses": 16,
+      "wr": 27.3,
+      "pnl": -0.19
     },
     {
       "pair": "CRCL",
@@ -169,7 +169,9 @@
       "status": "up"
     }
   ],
-  "logs": [],
+  "logs": [
+    "[stockcom] [12:53:51] [XAG] \ud83d\udd34 OPENED SHORT 18.0ct @ $72.56 SL:$73.65 TP:$71.83 R:R 1:0.7 [BB-REV: lower touch \u2192 SHORT (fade bounce) $72.66]"
+  ],
   "equity_history": [
     {
       "time": "03/20 12:44",
@@ -178,6 +180,10 @@
     {
       "time": "03/20 12:47",
       "equity": 1490.92
+    },
+    {
+      "time": "03/20 12:54",
+      "equity": 1484.66
     }
   ],
   "lessons": [
@@ -509,6 +515,42 @@
       "pnl": -0.01,
       "reason": "SL",
       "time": "00:04 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3405214193030340610",
+      "pair": "XAG",
+      "side": "?",
+      "size": "12",
+      "entry": "?",
+      "exit": "?",
+      "pnl": -0.14,
+      "reason": "SL",
+      "time": "12:48 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3405214193030340609",
+      "pair": "XAG",
+      "side": "?",
+      "size": "5",
+      "entry": "?",
+      "exit": "?",
+      "pnl": -0.06,
+      "reason": "SL",
+      "time": "12:48 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3405214193030340608",
+      "pair": "XAG",
+      "side": "?",
+      "size": "1",
+      "entry": "?",
+      "exit": "?",
+      "pnl": -0.01,
+      "reason": "SL",
+      "time": "12:48 WIB",
       "lesson": ""
     }
   ]

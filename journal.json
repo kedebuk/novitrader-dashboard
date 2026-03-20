@@ -238,5 +238,41 @@
     "reason": "SL",
     "time": "00:04 WIB",
     "lesson": ""
+  },
+  {
+    "bill_id": "3405214193030340610",
+    "pair": "XAG",
+    "side": "?",
+    "size": "12",
+    "entry": "?",
+    "exit": "?",
+    "pnl": -0.14,
+    "reason": "SL",
+    "time": "12:48 WIB",
+    "lesson": ""
+  },
+  {
+    "bill_id": "3405214193030340609",
+    "pair": "XAG",
+    "side": "?",
+    "size": "5",
+    "entry": "?",
+    "exit": "?",
+    "pnl": -0.06,
+    "reason": "SL",
+    "time": "12:48 WIB",
+    "lesson": ""
+  },
+  {
+    "bill_id": "3405214193030340608",
+    "pair": "XAG",
+    "side": "?",
+    "size": "1",
+    "entry": "?",
+    "exit": "?",
+    "pnl": -0.01,
+    "reason": "SL",
+    "time": "12:48 WIB",
+    "lesson": ""
   }
 ]
