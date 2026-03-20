@@ -298,5 +298,89 @@
     "reason": "TP/Trail",
     "time": "13:39 WIB",
     "lesson": ""
+  },
+  {
+    "bill_id": "3405498009334652928",
+    "pair": "ETH",
+    "side": "?",
+    "size": "0.01",
+    "entry": "?",
+    "exit": "?",
+    "pnl": 0.02,
+    "reason": "TP/Trail",
+    "time": "15:09 WIB",
+    "lesson": ""
+  },
+  {
+    "bill_id": "3405494454813007872",
+    "pair": "SOL",
+    "side": "?",
+    "size": "0.01",
+    "entry": "?",
+    "exit": "?",
+    "pnl": 0.01,
+    "reason": "TP/Trail",
+    "time": "15:07 WIB",
+    "lesson": ""
+  },
+  {
+    "bill_id": "3405530315340455937",
+    "pair": "XAG",
+    "side": "?",
+    "size": "17",
+    "entry": "?",
+    "exit": "?",
+    "pnl": 0.12,
+    "reason": "TP/Trail",
+    "time": "15:25 WIB",
+    "lesson": ""
+  },
+  {
+    "bill_id": "3405530315340455936",
+    "pair": "XAG",
+    "side": "?",
+    "size": "1",
+    "entry": "?",
+    "exit": "?",
+    "pnl": 0.01,
+    "reason": "TP/Trail",
+    "time": "15:25 WIB",
+    "lesson": ""
+  },
+  {
+    "bill_id": "3405442788772356099",
+    "pair": "XAG",
+    "side": "?",
+    "size": "16",
+    "entry": "?",
+    "exit": "?",
+    "pnl": -0.18,
+    "reason": "SL",
+    "time": "14:41 WIB",
+    "lesson": ""
+  },
+  {
+    "bill_id": "3405442788772356098",
+    "pair": "XAG",
+    "side": "?",
+    "size": "1",
+    "entry": "?",
+    "exit": "?",
+    "pnl": -0.01,
+    "reason": "SL",
+    "time": "14:41 WIB",
+    "lesson": ""
+  },
+  {
+    "bill_id": "3405442788772356097",
+    "pair": "XAG",
+    "side": "?",
+    "size": "1",
+    "entry": "?",
+    "exit": "?",
+    "pnl": -0.01,
+    "reason": "SL",
+    "time": "14:41 WIB",
+    "lesson": ""
   }
 ]
