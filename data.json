@@ -1,0 +1,179 @@
+{
+  "updated": "2026-03-20 12:44 WIB",
+  "equity": 1491.74,
+  "baseline": 1275,
+  "naked": 0,
+  "positions": [
+    {
+      "pair": "BTC",
+      "side": "short",
+      "size": 0.04,
+      "entry": 70908.1,
+      "mark": 70665.3,
+      "upnl": 0.0971200000000012,
+      "sl": true,
+      "tp": true
+    },
+    {
+      "pair": "XAU",
+      "side": "long",
+      "size": 531.0,
+      "entry": 4700.5,
+      "mark": 4704.0,
+      "upnl": 1.8585,
+      "sl": true,
+      "tp": true
+    },
+    {
+      "pair": "CRCL",
+      "side": "long",
+      "size": 0.1,
+      "entry": 128.64,
+      "mark": 127.21,
+      "upnl": -0.1429999999999993,
+      "sl": true,
+      "tp": true
+    },
+    {
+      "pair": "XAG",
+      "side": "long",
+      "size": 18.0,
+      "entry": 73.89,
+      "mark": 73.21,
+      "upnl": -0.1224000000000012,
+      "sl": true,
+      "tp": true
+    },
+    {
+      "pair": "MSTR",
+      "side": "short",
+      "size": 0.05,
+      "entry": 138.744,
+      "mark": 139.4,
+      "upnl": -0.0328000000000003,
+      "sl": true,
+      "tp": true
+    },
+    {
+      "pair": "BNB",
+      "side": "long",
+      "size": 4.0,
+      "entry": 636.0,
+      "mark": 643.3,
+      "upnl": 0.2919999999999982,
+      "sl": true,
+      "tp": true
+    }
+  ],
+  "winrate": [
+    {
+      "pair": "BTC",
+      "trades": 3,
+      "wins": 1,
+      "losses": 2,
+      "wr": 33.3,
+      "pnl": -8.89
+    },
+    {
+      "pair": "ETH",
+      "trades": 15,
+      "wins": 6,
+      "losses": 9,
+      "wr": 40.0,
+      "pnl": 10.11
+    },
+    {
+      "pair": "SOL",
+      "trades": 3,
+      "wins": 1,
+      "losses": 2,
+      "wr": 33.3,
+      "pnl": -0.99
+    },
+    {
+      "pair": "BNB",
+      "trades": 3,
+      "wins": 1,
+      "losses": 2,
+      "wr": 33.3,
+      "pnl": 1.61
+    },
+    {
+      "pair": "XAG",
+      "trades": 24,
+      "wins": 6,
+      "losses": 18,
+      "wr": 25.0,
+      "pnl": -0.07
+    },
+    {
+      "pair": "CRCL",
+      "trades": 15,
+      "wins": 6,
+      "losses": 9,
+      "wr": 40.0,
+      "pnl": 0.81
+    },
+    {
+      "pair": "MSTR",
+      "trades": 21,
+      "wins": 3,
+      "losses": 18,
+      "wr": 14.3,
+      "pnl": -0.6
+    },
+    {
+      "pair": "COIN",
+      "trades": 1,
+      "wins": 1,
+      "losses": 0,
+      "wr": 100.0,
+      "pnl": 0.24
+    }
+  ],
+  "services": [
+    {
+      "name": "wsfast",
+      "status": "up"
+    },
+    {
+      "name": "slow",
+      "status": "down"
+    },
+    {
+      "name": "devil",
+      "status": "up"
+    },
+    {
+      "name": "watchdog",
+      "status": "down"
+    },
+    {
+      "name": "whalemon",
+      "status": "up"
+    },
+    {
+      "name": "fastscan",
+      "status": "down"
+    },
+    {
+      "name": "crashbot",
+      "status": "up"
+    },
+    {
+      "name": "stockcom",
+      "status": "up"
+    },
+    {
+      "name": "live",
+      "status": "up"
+    }
+  ],
+  "logs": [],
+  "equity_history": [
+    {
+      "time": "03/20 12:44",
+      "equity": 1491.74
+    }
+  ]
+}
