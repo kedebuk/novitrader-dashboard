@@ -1,16 +1,36 @@
 {
-  "updated": "2026-03-20 13:50 WIB",
-  "equity": 1464.37,
+  "updated": "2026-03-20 14:12 WIB",
+  "equity": 1464.68,
   "baseline": 1275,
   "naked": 0,
   "positions": [
+    {
+      "pair": "SOL",
+      "side": "long",
+      "size": 0.01,
+      "entry": 88.76,
+      "mark": 88.58,
+      "upnl": -0.0018000000000001,
+      "sl": true,
+      "tp": true
+    },
+    {
+      "pair": "ETH",
+      "side": "long",
+      "size": 0.01,
+      "entry": 2133.76,
+      "mark": 2126.56,
+      "upnl": -0.0072000000000003,
+      "sl": true,
+      "tp": true
+    },
     {
       "pair": "XAG",
       "side": "short",
       "size": 18.0,
       "entry": 71.42,
-      "mark": 71.66,
-      "upnl": -0.0431999999999991,
+      "mark": 71.67,
+      "upnl": -0.045,
       "sl": true,
       "tp": true
     },
@@ -19,8 +39,8 @@
       "side": "short",
       "size": 0.1,
       "entry": 126.64,
-      "mark": 125.52,
-      "upnl": 0.1120000000000005,
+      "mark": 124.57,
+      "upnl": 0.2070000000000007,
       "sl": true,
       "tp": true
     },
@@ -29,8 +49,8 @@
       "side": "short",
       "size": 0.04,
       "entry": 70908.1,
-      "mark": 70449.7,
-      "upnl": 0.1833600000000035,
+      "mark": 70224.7,
+      "upnl": 0.2733600000000035,
       "sl": true,
       "tp": true
     },
@@ -39,8 +59,8 @@
       "side": "short",
       "size": 0.05,
       "entry": 138.744,
-      "mark": 138.78,
-      "upnl": -0.0018000000000001,
+      "mark": 138.41,
+      "upnl": 0.0167000000000002,
       "sl": true,
       "tp": true
     },
@@ -49,8 +69,8 @@
       "side": "long",
       "size": 4.0,
       "entry": 636.0,
-      "mark": 642.1,
-      "upnl": 0.2440000000000009,
+      "mark": 639.9,
+      "upnl": 0.1559999999999991,
       "sl": true,
       "tp": true
     }
@@ -203,9 +223,7 @@
       "status": "up"
     }
   ],
-  "logs": [
-    "[stockcom] [13:48:30] [XAG] \ud83d\udd34 OPENED SHORT 18.0ct @ $71.42 SL:$72.49 TP:$70.71 R:R 1:0.7 [BB-REV: lower touch \u2192 SHORT (fade bounce) $71.47]"
-  ],
+  "logs": [],
   "equity_history": [
     {
       "time": "03/20 12:44",
@@ -230,6 +248,10 @@
     {
       "time": "03/20 13:50",
       "equity": 1464.37
+    },
+    {
+      "time": "03/20 14:12",
+      "equity": 1464.68
     }
   ],
   "lessons": [
