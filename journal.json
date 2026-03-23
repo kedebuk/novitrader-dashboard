@@ -730,5 +730,17 @@
     "reason": "TP/Trail",
     "time": "18:06 WIB",
     "lesson": ""
+  },
+  {
+    "bill_id": "3414745191464116224",
+    "pair": "SOL",
+    "side": "?",
+    "size": "0.02",
+    "entry": "?",
+    "exit": "?",
+    "pnl": 0.02,
+    "reason": "TP/Trail",
+    "time": "19:42 WIB",
+    "lesson": ""
   }
 ]

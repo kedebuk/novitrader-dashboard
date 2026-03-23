@@ -1,6 +1,6 @@
 {
-  "updated": "2026-03-23 19:19 WIB",
-  "equity": 2349.16,
+  "updated": "2026-03-23 20:03 WIB",
+  "equity": 2363.69,
   "baseline": 1275,
   "naked": 0,
   "positions": [
@@ -9,18 +9,8 @@
       "side": "long",
       "size": 0.01,
       "entry": 2137.13,
-      "mark": 2121.38,
-      "upnl": -0.01575,
-      "sl": true,
-      "tp": true
-    },
-    {
-      "pair": "SOL",
-      "side": "long",
-      "size": 0.02,
-      "entry": 89.11,
-      "mark": 89.3,
-      "upnl": 0.0038,
+      "mark": 2146.46,
+      "upnl": 0.0093299999999999,
       "sl": true,
       "tp": true
     },
@@ -29,8 +19,8 @@
       "side": "long",
       "size": 0.01,
       "entry": 70176.0,
-      "mark": 70209.5,
-      "upnl": 0.00335,
+      "mark": 70748.0,
+      "upnl": 0.0572,
       "sl": true,
       "tp": true
     },
@@ -39,8 +29,8 @@
       "side": "long",
       "size": 1.0,
       "entry": 639.9,
-      "mark": 640.4,
-      "upnl": 0.005,
+      "mark": 645.7,
+      "upnl": 0.0580000000000007,
       "sl": true,
       "tp": true
     },
@@ -49,8 +39,8 @@
       "side": "short",
       "size": 0.1,
       "entry": 125.96,
-      "mark": 125.79,
-      "upnl": 0.0169999999999987,
+      "mark": 126.45,
+      "upnl": -0.0490000000000009,
       "sl": true,
       "tp": true
     },
@@ -59,8 +49,8 @@
       "side": "short",
       "size": 0.07,
       "entry": 201.33,
-      "mark": 198.81,
-      "upnl": 0.1764000000000007,
+      "mark": 200.25,
+      "upnl": 0.0756000000000009,
       "sl": true,
       "tp": true
     }
@@ -84,11 +74,11 @@
     },
     {
       "pair": "SOL",
-      "trades": 17,
-      "wins": 12,
+      "trades": 18,
+      "wins": 13,
       "losses": 5,
-      "wr": 70.6,
-      "pnl": -0.83
+      "wr": 72.2,
+      "pnl": -0.81
     },
     {
       "pair": "BNB",
@@ -270,6 +260,10 @@
     {
       "time": "03/23 19:19",
       "equity": 2349.16
+    },
+    {
+      "time": "03/23 20:03",
+      "equity": 2363.69
     }
   ],
   "lessons": [
@@ -1093,6 +1087,18 @@
       "pnl": 0.59,
       "reason": "TP/Trail",
       "time": "18:06 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3414745191464116224",
+      "pair": "SOL",
+      "side": "?",
+      "size": "0.02",
+      "entry": "?",
+      "exit": "?",
+      "pnl": 0.02,
+      "reason": "TP/Trail",
+      "time": "19:42 WIB",
       "lesson": ""
     }
   ]
