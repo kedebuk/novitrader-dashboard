@@ -742,5 +742,41 @@
     "reason": "TP/Trail",
     "time": "19:42 WIB",
     "lesson": ""
+  },
+  {
+    "bill_id": "3414856188686311424",
+    "pair": "BTC",
+    "side": "?",
+    "size": "0.01",
+    "entry": "?",
+    "exit": "?",
+    "pnl": 0.08,
+    "reason": "TP/Trail",
+    "time": "20:37 WIB",
+    "lesson": ""
+  },
+  {
+    "bill_id": "3414860507779244034",
+    "pair": "ETH",
+    "side": "?",
+    "size": "0.01",
+    "entry": "?",
+    "exit": "?",
+    "pnl": 0.03,
+    "reason": "TP/Trail",
+    "time": "20:39 WIB",
+    "lesson": ""
+  },
+  {
+    "bill_id": "3414869083956518912",
+    "pair": "BNB",
+    "side": "?",
+    "size": "1",
+    "entry": "?",
+    "exit": "?",
+    "pnl": 0.07,
+    "reason": "TP/Trail",
+    "time": "20:43 WIB",
+    "lesson": ""
   }
 ]

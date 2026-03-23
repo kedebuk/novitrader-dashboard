@@ -1,36 +1,46 @@
 {
-  "updated": "2026-03-23 20:03 WIB",
-  "equity": 2363.69,
+  "updated": "2026-03-23 20:57 WIB",
+  "equity": 2370.21,
   "baseline": 1275,
   "naked": 0,
   "positions": [
     {
       "pair": "ETH",
-      "side": "long",
+      "side": "short",
       "size": 0.01,
-      "entry": 2137.13,
-      "mark": 2146.46,
-      "upnl": 0.0093299999999999,
-      "sl": true,
-      "tp": true
-    },
-    {
-      "pair": "BTC",
-      "side": "long",
-      "size": 0.01,
-      "entry": 70176.0,
-      "mark": 70748.0,
-      "upnl": 0.0572,
+      "entry": 2173.05,
+      "mark": 2175.85,
+      "upnl": -0.0027999999999997,
       "sl": true,
       "tp": true
     },
     {
       "pair": "BNB",
-      "side": "long",
+      "side": "short",
       "size": 1.0,
-      "entry": 639.9,
-      "mark": 645.7,
-      "upnl": 0.0580000000000007,
+      "entry": 646.4,
+      "mark": 646.4,
+      "upnl": 0.0,
+      "sl": true,
+      "tp": true
+    },
+    {
+      "pair": "BTC",
+      "side": "short",
+      "size": 0.01,
+      "entry": 71119.3,
+      "mark": 71221.9,
+      "upnl": -0.0102599999999991,
+      "sl": true,
+      "tp": true
+    },
+    {
+      "pair": "SOL",
+      "side": "short",
+      "size": 0.03,
+      "entry": 90.78,
+      "mark": 90.98,
+      "upnl": -0.0060000000000001,
       "sl": true,
       "tp": true
     },
@@ -39,8 +49,8 @@
       "side": "short",
       "size": 0.1,
       "entry": 125.96,
-      "mark": 126.45,
-      "upnl": -0.0490000000000009,
+      "mark": 125.15,
+      "upnl": 0.0809999999999988,
       "sl": true,
       "tp": true
     },
@@ -49,8 +59,8 @@
       "side": "short",
       "size": 0.07,
       "entry": 201.33,
-      "mark": 200.25,
-      "upnl": 0.0756000000000009,
+      "mark": 202.04,
+      "upnl": -0.0496999999999986,
       "sl": true,
       "tp": true
     }
@@ -58,19 +68,19 @@
   "winrate": [
     {
       "pair": "BTC",
-      "trades": 10,
-      "wins": 6,
+      "trades": 11,
+      "wins": 7,
       "losses": 4,
-      "wr": 60.0,
-      "pnl": 22.46
+      "wr": 63.6,
+      "pnl": 22.54
     },
     {
       "pair": "ETH",
       "trades": 26,
-      "wins": 13,
-      "losses": 13,
-      "wr": 50.0,
-      "pnl": -3.55
+      "wins": 14,
+      "losses": 12,
+      "wr": 53.8,
+      "pnl": -1.62
     },
     {
       "pair": "SOL",
@@ -82,11 +92,11 @@
     },
     {
       "pair": "BNB",
-      "trades": 8,
-      "wins": 4,
+      "trades": 9,
+      "wins": 5,
       "losses": 4,
-      "wr": 50.0,
-      "pnl": 1.98
+      "wr": 55.6,
+      "pnl": 2.06
     },
     {
       "pair": "XAG",
@@ -175,10 +185,6 @@
       "status": "down"
     },
     {
-      "name": "optimizer",
-      "status": "down"
-    },
-    {
       "name": "gridscalp",
       "status": "up"
     },
@@ -264,6 +270,10 @@
     {
       "time": "03/23 20:03",
       "equity": 2363.69
+    },
+    {
+      "time": "03/23 20:57",
+      "equity": 2370.21
     }
   ],
   "lessons": [
@@ -1099,6 +1109,42 @@
       "pnl": 0.02,
       "reason": "TP/Trail",
       "time": "19:42 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3414856188686311424",
+      "pair": "BTC",
+      "side": "?",
+      "size": "0.01",
+      "entry": "?",
+      "exit": "?",
+      "pnl": 0.08,
+      "reason": "TP/Trail",
+      "time": "20:37 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3414860507779244034",
+      "pair": "ETH",
+      "side": "?",
+      "size": "0.01",
+      "entry": "?",
+      "exit": "?",
+      "pnl": 0.03,
+      "reason": "TP/Trail",
+      "time": "20:39 WIB",
+      "lesson": ""
+    },
+    {
+      "bill_id": "3414869083956518912",
+      "pair": "BNB",
+      "side": "?",
+      "size": "1",
+      "entry": "?",
+      "exit": "?",
+      "pnl": 0.07,
+      "reason": "TP/Trail",
+      "time": "20:43 WIB",
       "lesson": ""
     }
   ]
