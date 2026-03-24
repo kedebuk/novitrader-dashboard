@@ -1,1159 +1,403 @@
 {
-  "updated": "2026-03-23 21:47 WIB",
-  "equity": 1336.54,
+  "timestamp": "2026-03-24T21:56:13.114944+07:00",
+  "equity": 1355.3360526291044,
   "baseline": 1275,
-  "naked": 0,
   "positions": [
     {
-      "pair": "ETH",
-      "side": "short",
-      "size": 0.01,
-      "entry": 2173.05,
-      "mark": 2175.33,
-      "upnl": -0.0022799999999997,
-      "sl": true,
-      "tp": true
+      "instId": "ETH-USDT-SWAP",
+      "pos": "1.57",
+      "avgPx": "2141.08",
+      "markPx": "2138.73",
+      "upl": "0.3689499999999857",
+      "last": "2138.45"
+    }
+  ],
+  "ict_pairs": [
+    "DOGE-USDT-SWAP",
+    "SHIB-USDT-SWAP",
+    "ETH-USDT-SWAP",
+    "NFLX-USDT-SWAP",
+    "BNB-USDT-SWAP",
+    "JUP-USDT-SWAP",
+    "BTC-USDT-SWAP",
+    "FIL-USDT-SWAP",
+    "TIA-USDT-SWAP"
+  ],
+  "ict_stats": {
+    "trades": 0,
+    "wins": 0,
+    "losses": 0,
+    "wr": 0,
+    "pnl": 0,
+    "pairs": {}
+  },
+  "crash_stats": {
+    "trades": 134,
+    "wins": 58,
+    "losses": 76,
+    "wr": 43.28358208955223,
+    "pnl": 17.101859999999995,
+    "pairs": {
+      "ETH-USDT-SWAP": {
+        "trades": 2,
+        "wins": 2,
+        "pnl": 8.739659999999999,
+        "wr": 100.0
+      },
+      "SOL-USDT-SWAP": {
+        "trades": 3,
+        "wins": 2,
+        "pnl": 7.6812000000000005,
+        "wr": 66.66666666666666
+      },
+      "BNB": {
+        "trades": 7,
+        "wins": 4,
+        "pnl": 2.0235,
+        "wr": 57.14285714285714
+      },
+      "ETH": {
+        "trades": 21,
+        "wins": 12,
+        "pnl": 10.2833,
+        "wr": 57.14285714285714
+      },
+      "SOL": {
+        "trades": 9,
+        "wins": 6,
+        "pnl": -0.9543999999999999,
+        "wr": 66.66666666666666
+      },
+      "BTC": {
+        "trades": 7,
+        "wins": 5,
+        "pnl": 22.4384,
+        "wr": 71.42857142857143
+      },
+      "COIN": {
+        "trades": 3,
+        "wins": 2,
+        "pnl": 0.7081999999999999,
+        "wr": 66.66666666666666
+      },
+      "CRCL": {
+        "trades": 25,
+        "wins": 12,
+        "pnl": 1.9649999999999999,
+        "wr": 48.0
+      },
+      "XAG": {
+        "trades": 21,
+        "wins": 5,
+        "pnl": -0.8613,
+        "wr": 23.809523809523807
+      },
+      "MSTR": {
+        "trades": 23,
+        "wins": 6,
+        "pnl": -0.3849,
+        "wr": 26.08695652173913
+      },
+      "XAU": {
+        "trades": 13,
+        "wins": 2,
+        "pnl": -34.5368,
+        "wr": 15.384615384615385
+      }
+    }
+  },
+  "recent_trades": [
+    {
+      "bot": "CRASH",
+      "pair": "ETH-USDT-SWAP",
+      "direction": "long",
+      "entry": 2127.89,
+      "exit": 201.33,
+      "pnl": 8.645,
+      "hold": "86m",
+      "time": "2026-03-24T01:47"
     },
     {
+      "bot": "CRASH",
+      "pair": "SOL-USDT-SWAP",
+      "direction": "long",
+      "entry": 89.81,
+      "exit": 201.33,
+      "pnl": 7.686,
+      "hold": "74m",
+      "time": "2026-03-24T00:50"
+    },
+    {
+      "bot": "CRASH",
       "pair": "BNB",
-      "side": "short",
-      "size": 1.0,
+      "direction": "SHORT",
       "entry": 646.4,
-      "mark": 645.7,
-      "upnl": 0.0069999999999993,
-      "sl": true,
-      "tp": true
+      "exit": 633.5,
+      "pnl": 0.1258,
+      "hold": "210m",
+      "time": "2026-03-24 00:20"
     },
     {
-      "pair": "BTC",
-      "side": "short",
-      "size": 0.01,
-      "entry": 71119.3,
-      "mark": 71324.7,
-      "upnl": -0.0205399999999994,
-      "sl": true,
-      "tp": true
+      "bot": "CRASH",
+      "pair": "ETH-USDT-SWAP",
+      "direction": "long",
+      "entry": 2173.05,
+      "exit": 201.33,
+      "pnl": 0.09466,
+      "hold": "124m",
+      "time": "2026-03-23T22:54"
     },
     {
-      "pair": "SOL",
-      "side": "short",
-      "size": 0.03,
+      "bot": "CRASH",
+      "pair": "SOL-USDT-SWAP",
+      "direction": "long",
+      "entry": 92.18,
+      "exit": 201.33,
+      "pnl": 0.014700000000000005,
+      "hold": "36m",
+      "time": "2026-03-23T22:44"
+    },
+    {
+      "bot": "CRASH",
+      "pair": "SOL-USDT-SWAP",
+      "direction": "long",
       "entry": 90.78,
-      "mark": 91.38,
-      "upnl": -0.0179999999999998,
-      "sl": true,
-      "tp": true
+      "exit": 201.33,
+      "pnl": -0.019499999999999993,
+      "hold": "80m",
+      "time": "2026-03-23T22:03"
     },
     {
-      "pair": "CRCL",
-      "side": "short",
-      "size": 0.1,
-      "entry": 125.96,
-      "mark": 127.16,
-      "upnl": -0.1200000000000003,
-      "sl": true,
-      "tp": true
-    },
-    {
-      "pair": "COIN",
-      "side": "short",
-      "size": 0.07,
-      "entry": 201.33,
-      "mark": 202.74,
-      "upnl": -0.0986999999999998,
-      "sl": true,
-      "tp": true
-    }
-  ],
-  "winrate": [
-    {
-      "pair": "BTC",
-      "trades": 11,
-      "wins": 7,
-      "losses": 4,
-      "wr": 63.6,
-      "pnl": 22.54
-    },
-    {
+      "bot": "CRASH",
       "pair": "ETH",
-      "trades": 26,
-      "wins": 14,
-      "losses": 12,
-      "wr": 53.8,
-      "pnl": -1.62
+      "direction": "SHORT",
+      "entry": 2173.05,
+      "exit": 2130.15,
+      "pnl": 0.0418,
+      "hold": "123m",
+      "time": "2026-03-23 22:53"
     },
     {
+      "bot": "CRASH",
       "pair": "SOL",
-      "trades": 18,
-      "wins": 13,
-      "losses": 5,
-      "wr": 72.2,
-      "pnl": -0.81
+      "direction": "SHORT",
+      "entry": 90.78,
+      "exit": 92.14,
+      "pnl": -0.0422,
+      "hold": "80m",
+      "time": "2026-03-23 22:02"
     },
     {
+      "bot": "CRASH",
       "pair": "BNB",
-      "trades": 9,
-      "wins": 5,
-      "losses": 4,
-      "wr": 55.6,
-      "pnl": 2.06
+      "direction": "LONG",
+      "entry": 639.9,
+      "exit": 647.5,
+      "pnl": 0.0728,
+      "hold": "108m",
+      "time": "2026-03-23 20:43"
     },
     {
-      "pair": "XAG",
-      "trades": 17,
-      "wins": 4,
-      "losses": 13,
-      "wr": 23.5,
-      "pnl": -0.36
+      "bot": "CRASH",
+      "pair": "ETH",
+      "direction": "LONG",
+      "entry": 2137.13,
+      "exit": 2162.72,
+      "pnl": 0.0245,
+      "hold": "102m",
+      "time": "2026-03-23 20:39"
     },
     {
-      "pair": "CRCL",
-      "trades": 25,
-      "wins": 10,
-      "losses": 15,
-      "wr": 40.0,
-      "pnl": 0.77
+      "bot": "CRASH",
+      "pair": "BTC",
+      "direction": "LONG",
+      "entry": 70176.0,
+      "exit": 71024.7,
+      "pnl": 0.0813,
+      "hold": "101m",
+      "time": "2026-03-23 20:37"
     },
     {
-      "pair": "MSTR",
-      "trades": 23,
-      "wins": 6,
-      "losses": 17,
-      "wr": 26.1,
-      "pnl": -0.38
+      "bot": "CRASH",
+      "pair": "SOL",
+      "direction": "LONG",
+      "entry": 89.11,
+      "exit": 90.17,
+      "pnl": 0.0203,
+      "hold": "46m",
+      "time": "2026-03-23 19:42"
     },
     {
+      "bot": "CRASH",
       "pair": "COIN",
-      "trades": 4,
-      "wins": 2,
-      "losses": 2,
-      "wr": 50.0,
-      "pnl": 0.67
+      "direction": "LONG",
+      "entry": 189.95,
+      "exit": 197.73,
+      "pnl": 0.6224,
+      "hold": "626m",
+      "time": "2026-03-23 18:07"
+    },
+    {
+      "bot": "CRASH",
+      "pair": "CRCL",
+      "direction": "LONG",
+      "entry": 119.77,
+      "exit": 125.07,
+      "pnl": 0.53,
+      "hold": "202m",
+      "time": "2026-03-23 18:07"
+    },
+    {
+      "bot": "CRASH",
+      "pair": "CRCL",
+      "direction": "LONG",
+      "entry": 121.91,
+      "exit": 118.92,
+      "pnl": -0.299,
+      "hold": "373m",
+      "time": "2026-03-23 14:28"
+    },
+    {
+      "bot": "CRASH",
+      "pair": "CRCL",
+      "direction": "SHORT",
+      "entry": 125.58,
+      "exit": 120.58,
+      "pnl": 0.5,
+      "hold": "937m",
+      "time": "2026-03-23 07:56"
+    },
+    {
+      "bot": "CRASH",
+      "pair": "CRCL",
+      "direction": "LONG",
+      "entry": 124.22,
+      "exit": 125.76,
+      "pnl": 0.154,
+      "hold": "2267m",
+      "time": "2026-03-22 16:01"
+    },
+    {
+      "bot": "CRASH",
+      "pair": "BNB",
+      "direction": "LONG",
+      "entry": 640.8,
+      "exit": 627.7,
+      "pnl": -0.1341,
+      "hold": "2283m",
+      "time": "2026-03-22 06:57"
+    },
+    {
+      "bot": "CRASH",
+      "pair": "SOL",
+      "direction": "SHORT",
+      "entry": 90.01,
+      "exit": 88.93,
+      "pnl": 0.0104,
+      "hold": "1536m",
+      "time": "2026-03-22 06:48"
+    },
+    {
+      "bot": "CRASH",
+      "pair": "ETH",
+      "direction": "SHORT",
+      "entry": 2152.36,
+      "exit": 2126.32,
+      "pnl": 0.025,
+      "hold": "1545m",
+      "time": "2026-03-22 06:47"
     }
   ],
-  "services": [
-    {
-      "name": "news",
-      "status": "down"
-    },
-    {
-      "name": "pnl",
-      "status": "down"
-    },
-    {
-      "name": "watchdog-fast",
-      "status": "down"
-    },
-    {
-      "name": "onchain",
-      "status": "down"
-    },
-    {
-      "name": "volatility",
-      "status": "down"
-    },
-    {
-      "name": "slow",
-      "status": "down"
-    },
-    {
-      "name": "devil",
-      "status": "up"
-    },
-    {
-      "name": "watchdog",
-      "status": "down"
-    },
-    {
-      "name": "whalemon",
-      "status": "up"
-    },
-    {
-      "name": "whale",
-      "status": "down"
-    },
-    {
-      "name": "correlation",
-      "status": "down"
-    },
-    {
-      "name": "liquidation",
-      "status": "down"
-    },
-    {
-      "name": "fastscan",
-      "status": "down"
-    },
-    {
-      "name": "gridscalp",
-      "status": "up"
-    },
-    {
-      "name": "crashbot",
-      "status": "up"
-    },
-    {
-      "name": "stockcom",
-      "status": "up"
-    },
-    {
-      "name": "market-intel",
-      "status": "down"
-    },
-    {
-      "name": "live",
-      "status": "up"
-    }
-  ],
-  "logs": [],
+  "today_pnl": 16.4568,
+  "today_trades": 3,
+  "services": {
+    "ictbot": "74944",
+    "crashbot": "29038"
+  },
   "equity_history": [
     {
-      "time": "03/20 12:44",
+      "ts": "03/20 12:44",
       "equity": 1491.74
     },
     {
-      "time": "03/20 12:47",
+      "ts": "03/20 12:47",
       "equity": 1490.92
     },
     {
-      "time": "03/20 12:54",
+      "ts": "03/20 12:54",
       "equity": 1484.66
     },
     {
-      "time": "03/20 13:23",
+      "ts": "03/20 13:23",
       "equity": 1482.01
     },
     {
-      "time": "03/20 13:46",
+      "ts": "03/20 13:46",
       "equity": 1464.6
     },
     {
-      "time": "03/20 13:50",
+      "ts": "03/20 13:50",
       "equity": 1464.37
     },
     {
-      "time": "03/20 14:12",
+      "ts": "03/20 14:12",
       "equity": 1464.68
     },
     {
-      "time": "03/20 15:44",
+      "ts": "03/20 15:44",
       "equity": 1472.15
     },
     {
-      "time": "03/20 16:06",
+      "ts": "03/20 16:06",
       "equity": 1477.57
     },
     {
-      "time": "03/20 16:27",
+      "ts": "03/20 16:27",
       "equity": 1489.77
     },
     {
-      "time": "03/20 16:48",
+      "ts": "03/20 16:48",
       "equity": 1487.96
     },
     {
-      "time": "03/20 17:10",
+      "ts": "03/20 17:10",
       "equity": 1491.06
     },
     {
-      "time": "03/20 17:17",
+      "ts": "03/20 17:17",
       "equity": 1488.7
     },
     {
-      "time": "03/20 17:49",
+      "ts": "03/20 17:49",
       "equity": 1472.91
     },
     {
-      "time": "03/23 19:19",
+      "ts": "03/23 19:19",
       "equity": 2349.16
     },
     {
-      "time": "03/23 20:03",
+      "ts": "03/23 20:03",
       "equity": 2363.69
     },
     {
-      "time": "03/23 20:57",
+      "ts": "03/23 20:57",
       "equity": 2370.21
     },
     {
-      "time": "03/23 21:04",
+      "ts": "03/23 21:04",
       "equity": 2377.63
     },
     {
-      "time": "03/23 21:47",
+      "ts": "03/23 21:47",
       "equity": 1336.54
-    }
-  ],
-  "lessons": [
-    {
-      "date": "2026-03-17",
-      "text": "WS_URL pointed to DEMO endpoint \u2014 all price data was fake. Root cause of ALL phantom SLs, price drift, wrong fills. Always verify endpoints."
-    },
-    {
-      "date": "2026-03-17",
-      "text": "Race condition in MAX_POS check: 2 goroutines opened CRV simultaneously (175ct SHORT + 169ct LONG). Added re-check before order placement."
-    },
-    {
-      "date": "2026-03-18",
-      "text": "sync_loop recalculated SL from hardcoded sl_pct=0.02, moving SL closer and triggering immediate SL on restart. Never overwrite existing SL with hardcoded defaults."
-    },
-    {
-      "date": "2026-03-18",
-      "text": "ISP di Indonesia (Internet Positif) blocks OKX API. DNS hijacking redirects ws.okx.com \u2192 36.86.63.185. Solution: DNS monkey-patch + WARP SOCKS5 proxy."
-    },
-    {
-      "date": "2026-03-19",
-      "text": "ADX 14 di crypto selalu 40-54 di kondisi normal. Threshold 25 permanently block semua entry. Raised to 40."
-    },
-    {
-      "date": "2026-03-19",
-      "text": "XAG WR 22% over 32 trades \u2014 strategy bb_tight tidak cocok. Flip ke reverse juga gagal. Disabled."
-    },
-    {
-      "date": "2026-03-20",
-      "text": "wr_audit.py bug: no rate limit delay (8 calls berturut \u2192 OKX 429) + counting all bills including fees (subType 3,4) instead of only closes (5,6). Fixed."
-    },
-    {
-      "date": "2026-03-20",
-      "text": "MSTR WR 14% (3W/18L) post-reverse, WR 5% pre-reverse. EMA triple strategy incompatible with MSTR. Disabled permanently."
-    },
-    {
-      "date": "2026-03-20",
-      "text": "R:R terlalu rendah (1:1.3) dengan WR 40% = barely breakeven. Raised TP dari 65% ke 75% range (Bot 1) dan 2% ke 3% (Bot 2). MIN_NET_RR raised 1.5 \u2192 2.0."
-    }
-  ],
-  "improvements": [
-    {
-      "date": "2026-03-17",
-      "type": "BUGFIX",
-      "text": "Bug #1-#21: calc_size leverage, sync SL/TP, race condition, smart_round, close order sz, int truncation, trail state reset, EMA filter removal, range seed, re-entry cooldown"
-    },
-    {
-      "date": "2026-03-17",
-      "type": "STRATEGY",
-      "text": "Changed pairs STRK/FIL/SHIB/ETH/CRV \u2192 BTC/ETH/SOL/BNB. Strategy: EMA trend-following \u2192 Range Edge + RSI Reversal"
-    },
-    {
-      "date": "2026-03-18",
-      "type": "CRITICAL",
-      "text": "Bug #33: WS_URL fixed from demo to live endpoint. Root cause of ALL prior anomalies."
-    },
-    {
-      "date": "2026-03-18",
-      "type": "BUGFIX",
-      "text": "Bug #34-#45: Rolling 4h range, real 1m candle RSI via REST, ADX trend filter, trail+server SL race, Telegram HTML, min SL distance, BTC correlation, open_time sync, server-side close journalling, ADX 25\u219240, DNS hijacking fix"
-    },
-    {
-      "date": "2026-03-19",
-      "type": "NEW BOT",
-      "text": "Bot 2 (ws_stockcom.py) launched \u2014 COIN/CRCL/XAG/MSTR. Bot 3 (ws_crash_recovery.py) launched \u2014 ETH/SOL/DOGE/LINK/AVAX/ADA/SUI crash recovery"
-    },
-    {
-      "date": "2026-03-19",
-      "type": "STRATEGY",
-      "text": "XAG disabled (WR 22%). MSTR flipped to reverse. Strategy flip logic implemented. wr_audit.py created."
-    },
-    {
-      "date": "2026-03-20",
-      "type": "INFRA",
-      "text": "WARP SOCKS5 proxy deployed (socks5://127.0.0.1:40000). ALL REST API calls routed through WARP. SL/TP no longer disappear."
-    },
-    {
-      "date": "2026-03-20",
-      "type": "BUGFIX",
-      "text": "wr_audit.py fixed: added rate limit delay + filter subType 5,6 only. CRCL/MSTR data now accurate."
-    },
-    {
-      "date": "2026-03-20",
-      "type": "STRATEGY",
-      "text": "MSTR disabled (WR 14% post-reverse). R:R raised: TP 65\u219275% range, MIN_NET_RR 1.5\u21922.0 (Bot 1). TP 2%\u21923% (Bot 2)."
-    },
-    {
-      "date": "2026-03-20",
-      "type": "NEW",
-      "text": "GitHub Pages dashboard launched: real-time equity, positions, WR, services, lessons, journal"
-    }
-  ],
-  "journal": [
-    {
-      "bill_id": "3404640716279848965",
-      "pair": "XAG",
-      "side": "?",
-      "size": "6",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.06,
-      "reason": "SL",
-      "time": "08:03 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3404640716279848964",
-      "pair": "XAG",
-      "side": "?",
-      "size": "2",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.02,
-      "reason": "SL",
-      "time": "08:03 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3404640716279848963",
-      "pair": "XAG",
-      "side": "?",
-      "size": "1",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.01,
-      "reason": "SL",
-      "time": "08:03 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3404640716279848962",
-      "pair": "XAG",
-      "side": "?",
-      "size": "1",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.01,
-      "reason": "SL",
-      "time": "08:03 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3404640716279848961",
-      "pair": "XAG",
-      "side": "?",
-      "size": "3",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.03,
-      "reason": "SL",
-      "time": "08:03 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3404640716279848960",
-      "pair": "XAG",
-      "side": "?",
-      "size": "5",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.05,
-      "reason": "SL",
-      "time": "08:03 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3404361565585088512",
-      "pair": "XAG",
-      "side": "?",
-      "size": "18",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.2,
-      "reason": "SL",
-      "time": "05:44 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3404278443640168448",
-      "pair": "XAG",
-      "side": "?",
-      "size": "18",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.19,
-      "reason": "SL",
-      "time": "05:03 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3403925901450223616",
-      "pair": "XAG",
-      "side": "?",
-      "size": "18",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.19,
-      "reason": "TP/Trail",
-      "time": "02:08 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3404821576111169536",
-      "pair": "CRCL",
-      "side": "?",
-      "size": "0.1",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.2,
-      "reason": "SL",
-      "time": "09:33 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3404683765945016320",
-      "pair": "CRCL",
-      "side": "?",
-      "size": "0.1",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.19,
-      "reason": "SL",
-      "time": "08:24 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3403996993963499520",
-      "pair": "CRCL",
-      "side": "?",
-      "size": "0.1",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.25,
-      "reason": "TP/Trail",
-      "time": "02:43 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3403898649849176064",
-      "pair": "CRCL",
-      "side": "?",
-      "size": "0.1",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.22,
-      "reason": "TP/Trail",
-      "time": "01:54 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3403981381992259584",
-      "pair": "MSTR",
-      "side": "?",
-      "size": "0.05",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.07,
-      "reason": "TP/Trail",
-      "time": "02:35 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3403913120231530497",
-      "pair": "MSTR",
-      "side": "?",
-      "size": "0.04",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.08,
-      "reason": "SL",
-      "time": "02:01 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3403913120231530496",
-      "pair": "MSTR",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.02,
-      "reason": "SL",
-      "time": "02:01 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3403716430425825280",
-      "pair": "MSTR",
-      "side": "?",
-      "size": "0.05",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.06,
-      "reason": "TP/Trail",
-      "time": "00:24 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3403677224118853632",
-      "pair": "MSTR",
-      "side": "?",
-      "size": "0.12",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.17,
-      "reason": "SL",
-      "time": "00:04 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3403677224085299201",
-      "pair": "MSTR",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.01,
-      "reason": "SL",
-      "time": "00:04 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3403677224085299200",
-      "pair": "MSTR",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.01,
-      "reason": "SL",
-      "time": "00:04 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405214193030340610",
-      "pair": "XAG",
-      "side": "?",
-      "size": "12",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.14,
-      "reason": "SL",
-      "time": "12:48 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405214193030340609",
-      "pair": "XAG",
-      "side": "?",
-      "size": "5",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.06,
-      "reason": "SL",
-      "time": "12:48 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405214193030340608",
-      "pair": "XAG",
-      "side": "?",
-      "size": "1",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.01,
-      "reason": "SL",
-      "time": "12:48 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405260333796892672",
-      "pair": "CRCL",
-      "side": "?",
-      "size": "0.1",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.2,
-      "reason": "SL",
-      "time": "13:11 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405317283486179328",
-      "pair": "XAG",
-      "side": "?",
-      "size": "18",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.12,
-      "reason": "TP/Trail",
-      "time": "13:39 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405498009334652928",
-      "pair": "ETH",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.02,
-      "reason": "TP/Trail",
-      "time": "15:09 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405494454813007872",
-      "pair": "SOL",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.01,
-      "reason": "TP/Trail",
-      "time": "15:07 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405530315340455937",
-      "pair": "XAG",
-      "side": "?",
-      "size": "17",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.12,
-      "reason": "TP/Trail",
-      "time": "15:25 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405530315340455936",
-      "pair": "XAG",
-      "side": "?",
-      "size": "1",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.01,
-      "reason": "TP/Trail",
-      "time": "15:25 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405442788772356099",
-      "pair": "XAG",
-      "side": "?",
-      "size": "16",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.18,
-      "reason": "SL",
-      "time": "14:41 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405442788772356098",
-      "pair": "XAG",
-      "side": "?",
-      "size": "1",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.01,
-      "reason": "SL",
-      "time": "14:41 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405442788772356097",
-      "pair": "XAG",
-      "side": "?",
-      "size": "1",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.01,
-      "reason": "SL",
-      "time": "14:41 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405638840741863424",
-      "pair": "ETH",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.02,
-      "reason": "TP/Trail",
-      "time": "16:19 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405630223124865024",
-      "pair": "SOL",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.01,
-      "reason": "TP/Trail",
-      "time": "16:14 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405614627930841088",
-      "pair": "BNB",
-      "side": "?",
-      "size": "4",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.35,
-      "reason": "TP/Trail",
-      "time": "16:07 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405689880522596352",
-      "pair": "XAG",
-      "side": "?",
-      "size": "18",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.13,
-      "reason": "TP/Trail",
-      "time": "16:44 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405729475423444992",
-      "pair": "XAG",
-      "side": "?",
-      "size": "18",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.13,
-      "reason": "TP/Trail",
-      "time": "17:04 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405785745971027968",
-      "pair": "BTC",
-      "side": "?",
-      "size": "3.16",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 31.03,
-      "reason": "TP/Trail",
-      "time": "17:32 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405795546683744258",
-      "pair": "MSTR",
-      "side": "?",
-      "size": "0.03",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.01,
-      "reason": "TP/Trail",
-      "time": "17:36 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405795546683744257",
-      "pair": "MSTR",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.0,
-      "reason": "TP/Trail",
-      "time": "17:36 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3405795546683744256",
-      "pair": "MSTR",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.0,
-      "reason": "TP/Trail",
-      "time": "17:36 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3414634935828422656",
-      "pair": "BTC",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.08,
-      "reason": "TP/Trail",
-      "time": "18:47 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3414550060194668553",
-      "pair": "BTC",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.14,
-      "reason": "TP/Trail",
-      "time": "18:05 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3412859458960826368",
-      "pair": "BTC",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.1,
-      "reason": "SL",
-      "time": "04:05 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3414633577477906432",
-      "pair": "ETH",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.03,
-      "reason": "TP/Trail",
-      "time": "18:46 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3414586368136912897",
-      "pair": "ETH",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.04,
-      "reason": "TP/Trail",
-      "time": "18:23 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3414565726121435136",
-      "pair": "ETH",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.03,
-      "reason": "SL",
-      "time": "18:13 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3414550661758525440",
-      "pair": "ETH",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.04,
-      "reason": "TP/Trail",
-      "time": "18:05 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3412858677847203840",
-      "pair": "ETH",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.03,
-      "reason": "SL",
-      "time": "04:05 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3414633730150572032",
-      "pair": "SOL",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.01,
-      "reason": "TP/Trail",
-      "time": "18:46 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3414588176150372352",
-      "pair": "SOL",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.01,
-      "reason": "TP/Trail",
-      "time": "18:24 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3414549974161104896",
-      "pair": "SOL",
-      "side": "?",
-      "size": "0.02",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.02,
-      "reason": "TP/Trail",
-      "time": "18:05 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3414010784201646080",
-      "pair": "SOL",
-      "side": "?",
-      "size": "0.02",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.02,
-      "reason": "TP/Trail",
-      "time": "13:37 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3413847651277414403",
-      "pair": "SOL",
-      "side": "?",
-      "size": "0.02",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.03,
-      "reason": "TP/Trail",
-      "time": "12:16 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3412859139119980544",
-      "pair": "SOL",
-      "side": "?",
-      "size": "0.02",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.03,
-      "reason": "SL",
-      "time": "04:05 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3414635721203458048",
-      "pair": "BNB",
-      "side": "?",
-      "size": "1",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.08,
-      "reason": "TP/Trail",
-      "time": "18:47 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3414551148599779328",
-      "pair": "BNB",
-      "side": "?",
-      "size": "1",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.08,
-      "reason": "TP/Trail",
-      "time": "18:05 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3414552288980705280",
-      "pair": "CRCL",
-      "side": "?",
-      "size": "0.1",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.47,
-      "reason": "TP/Trail",
-      "time": "18:06 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3414113237593038848",
-      "pair": "CRCL",
-      "side": "?",
-      "size": "0.1",
-      "entry": "?",
-      "exit": "?",
-      "pnl": -0.31,
-      "reason": "SL",
-      "time": "14:28 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3413323529304743936",
-      "pair": "CRCL",
-      "side": "?",
-      "size": "0.1",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.5,
-      "reason": "TP/Trail",
-      "time": "07:56 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3414551818379796480",
-      "pair": "COIN",
-      "side": "?",
-      "size": "0.08",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.59,
-      "reason": "TP/Trail",
-      "time": "18:06 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3414745191464116224",
-      "pair": "SOL",
-      "side": "?",
-      "size": "0.02",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.02,
-      "reason": "TP/Trail",
-      "time": "19:42 WIB",
-      "lesson": ""
-    },
-    {
-      "bill_id": "3414856188686311424",
-      "pair": "BTC",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.08,
-      "reason": "TP/Trail",
-      "time": "20:37 WIB",
-      "lesson": ""
     },
     {
-      "bill_id": "3414860507779244034",
-      "pair": "ETH",
-      "side": "?",
-      "size": "0.01",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.03,
-      "reason": "TP/Trail",
-      "time": "20:39 WIB",
-      "lesson": ""
+      "ts": "2026-03-24T21:55:56.543989+07:00",
+      "equity": 1355.3465257823918
     },
     {
-      "bill_id": "3414869083956518912",
-      "pair": "BNB",
-      "side": "?",
-      "size": "1",
-      "entry": "?",
-      "exit": "?",
-      "pnl": 0.07,
-      "reason": "TP/Trail",
-      "time": "20:43 WIB",
-      "lesson": ""
+      "ts": "2026-03-24T21:56:13.114944+07:00",
+      "equity": 1355.3360526291044
     }
   ]
 }
