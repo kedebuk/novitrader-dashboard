@@ -1,15 +1,23 @@
 {
-  "timestamp": "2026-03-24T21:58:37.719318+07:00",
-  "equity": 1355.3432707803477,
+  "timestamp": "2026-03-24T22:01:55.739864+07:00",
+  "equity": 1354.4890307780024,
   "baseline": 1275,
   "positions": [
+    {
+      "instId": "BNB-USDT-SWAP",
+      "pos": "106",
+      "avgPx": "629.9",
+      "markPx": "630",
+      "upl": "0.1060000000000241",
+      "last": "630"
+    },
     {
       "instId": "ETH-USDT-SWAP",
       "pos": "1.57",
       "avgPx": "2141.08",
-      "markPx": "2135.1",
-      "upl": "0.9388600000000029",
-      "last": "2135.13"
+      "markPx": "2137.62",
+      "upl": "0.5432200000000057",
+      "last": "2137.46"
     }
   ],
   "ict_pairs": [
@@ -24,12 +32,25 @@
     "TIA-USDT-SWAP"
   ],
   "ict_stats": {
-    "trades": 0,
+    "trades": 2,
     "wins": 0,
-    "losses": 0,
-    "wr": 0,
-    "pnl": 0,
-    "pairs": {}
+    "losses": 2,
+    "wr": 0.0,
+    "pnl": 0.0,
+    "pairs": {
+      "BNB-USDT-SWAP": {
+        "trades": 1,
+        "wins": 0,
+        "pnl": 0.0,
+        "wr": 0.0
+      },
+      "ETH-USDT-SWAP": {
+        "trades": 1,
+        "wins": 0,
+        "pnl": 0.0,
+        "wr": 0.0
+      }
+    }
   },
   "crash_stats": {
     "trades": 134,
@@ -107,6 +128,26 @@
     }
   },
   "recent_trades": [
+    {
+      "bot": "ICT",
+      "pair": "BNB-USDT-SWAP",
+      "direction": "LONG",
+      "entry": 630.2,
+      "exit": 629.5,
+      "pnl": 0.0,
+      "hold": "1m",
+      "time": "2026-03-24T22:01"
+    },
+    {
+      "bot": "ICT",
+      "pair": "ETH-USDT-SWAP",
+      "direction": "SHORT",
+      "entry": 2141.7,
+      "exit": 2135.22,
+      "pnl": 0.0,
+      "hold": "9m",
+      "time": "2026-03-24T22:01"
+    },
     {
       "bot": "CRASH",
       "pair": "ETH-USDT-SWAP",
@@ -286,30 +327,10 @@
       "pnl": -0.1341,
       "hold": "2283m",
       "time": "2026-03-22 06:57"
-    },
-    {
-      "bot": "CRASH",
-      "pair": "SOL",
-      "direction": "SHORT",
-      "entry": 90.01,
-      "exit": 88.93,
-      "pnl": 0.0104,
-      "hold": "1536m",
-      "time": "2026-03-22 06:48"
-    },
-    {
-      "bot": "CRASH",
-      "pair": "ETH",
-      "direction": "SHORT",
-      "entry": 2152.36,
-      "exit": 2126.32,
-      "pnl": 0.025,
-      "hold": "1545m",
-      "time": "2026-03-22 06:47"
     }
   ],
   "today_pnl": 16.4568,
-  "today_trades": 3,
+  "today_trades": 5,
   "services": {
     "ictbot": "74944",
     "crashbot": "29038"
@@ -402,6 +423,10 @@
     {
       "ts": "2026-03-24T21:58:37.719318+07:00",
       "equity": 1355.3432707803477
+    },
+    {
+      "ts": "2026-03-24T22:01:55.739864+07:00",
+      "equity": 1354.4890307780024
     }
   ]
 }
