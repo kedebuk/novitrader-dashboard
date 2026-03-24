@@ -1,517 +1,549 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NoviTrader Dashboard</title>
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background: #0a0e17;
-            color: #e0e6ed;
-            min-height: 100vh;
-            padding: 20px;
-        }
-        .header {
-            text-align: center;
-            padding: 20px 0;
-            border-bottom: 1px solid #1e2a3a;
-            margin-bottom: 24px;
-        }
-        .header h1 {
-            font-size: 28px;
-            color: #00d4aa;
-            letter-spacing: 1px;
-        }
-        .header .subtitle {
-            color: #6b7c93;
-            font-size: 14px;
-            margin-top: 4px;
-        }
-        .header .updated {
-            color: #4a5568;
-            font-size: 12px;
-            margin-top: 8px;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>NoviTrader Command Centre</title>
+<style>
+* { margin: 0; padding: 0; box-sizing: border-box; }
+body {
+    font-family: 'SF Mono', 'Fira Code', 'Courier New', monospace;
+    background: #0a0e17;
+    color: #e0e6ed;
+    min-height: 100vh;
+    padding: 12px;
+}
 
-        .metrics {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 16px;
-            margin-bottom: 24px;
-        }
-        .metric-card {
-            background: #111827;
-            border: 1px solid #1e2a3a;
-            border-radius: 12px;
-            padding: 20px;
-            text-align: center;
-        }
-        .metric-card .label {
-            font-size: 12px;
-            color: #6b7c93;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        .metric-card .value {
-            font-size: 32px;
-            font-weight: 700;
-            margin-top: 8px;
-        }
-        .metric-card .change {
-            font-size: 14px;
-            margin-top: 4px;
-        }
-        .green { color: #00d4aa; }
-        .red { color: #ff4757; }
-        .yellow { color: #ffa502; }
-        .gray { color: #6b7c93; }
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    background: linear-gradient(135deg, #111827 0%, #1a1f36 100%);
+    border: 1px solid #1e293b;
+    border-radius: 12px;
+    margin-bottom: 12px;
+}
+.header h1 { font-size: 20px; color: #60a5fa; }
+.header .status { display: flex; gap: 12px; align-items: center; }
+.header .dot { width: 8px; height: 8px; border-radius: 50%; display: inline-block; }
+.dot.green { background: #22c55e; box-shadow: 0 0 8px #22c55e; }
+.dot.red { background: #ef4444; box-shadow: 0 0 8px #ef4444; }
+.dot.yellow { background: #eab308; box-shadow: 0 0 8px #eab308; }
 
-        .section-title {
-            font-size: 18px;
-            color: #00d4aa;
-            margin-bottom: 12px;
-            padding-bottom: 8px;
-            border-bottom: 1px solid #1e2a3a;
-        }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 12px;
+    margin-bottom: 12px;
+}
 
-        .positions-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 24px;
-        }
-        .positions-table th {
-            background: #111827;
-            color: #6b7c93;
-            font-size: 11px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            padding: 12px 16px;
-            text-align: left;
-            border-bottom: 1px solid #1e2a3a;
-        }
-        .positions-table td {
-            padding: 12px 16px;
-            border-bottom: 1px solid #1a2332;
-            font-size: 14px;
-        }
-        .positions-table tr:hover {
-            background: #111827;
-        }
-        .badge {
-            display: inline-block;
-            padding: 2px 8px;
-            border-radius: 4px;
-            font-size: 11px;
-            font-weight: 600;
-        }
-        .badge-long { background: #00d4aa22; color: #00d4aa; }
-        .badge-short { background: #ff475722; color: #ff4757; }
-        .badge-sl { background: #00d4aa22; color: #00d4aa; }
-        .badge-naked { background: #ff475722; color: #ff4757; }
+.card {
+    background: #111827;
+    border: 1px solid #1e293b;
+    border-radius: 10px;
+    padding: 16px;
+    position: relative;
+    overflow: hidden;
+}
+.card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, #3b82f6, transparent);
+}
+.card h2 {
+    font-size: 13px;
+    color: #64748b;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 10px;
+}
+.card .big-num {
+    font-size: 32px;
+    font-weight: 700;
+}
+.green { color: #22c55e; }
+.red { color: #ef4444; }
+.blue { color: #60a5fa; }
+.yellow { color: #eab308; }
+.dim { color: #475569; }
+.sub { font-size: 12px; color: #64748b; margin-top: 4px; }
 
-        .wr-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 12px;
-            margin-bottom: 24px;
-        }
-        .wr-card {
-            background: #111827;
-            border: 1px solid #1e2a3a;
-            border-radius: 8px;
-            padding: 16px;
-        }
-        .wr-card .pair-name {
-            font-size: 16px;
-            font-weight: 700;
-        }
-        .wr-card .wr-value {
-            font-size: 24px;
-            font-weight: 700;
-            margin-top: 4px;
-        }
-        .wr-card .wr-detail {
-            font-size: 12px;
-            color: #6b7c93;
-            margin-top: 4px;
-        }
-        .wr-bar {
-            height: 4px;
-            background: #1e2a3a;
-            border-radius: 2px;
-            margin-top: 8px;
-            overflow: hidden;
-        }
-        .wr-bar-fill {
-            height: 100%;
-            border-radius: 2px;
-        }
+/* Positions table */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+th {
+    text-align: left;
+    padding: 6px 8px;
+    color: #64748b;
+    border-bottom: 1px solid #1e293b;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 10px;
+    letter-spacing: 1px;
+}
+td {
+    padding: 6px 8px;
+    border-bottom: 1px solid #111827;
+}
+tr:hover { background: #1a1f36; }
 
-        .services {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 24px;
-        }
-        .svc-badge {
-            padding: 6px 12px;
-            border-radius: 6px;
-            font-size: 12px;
-            font-weight: 600;
-        }
-        .svc-up { background: #00d4aa22; color: #00d4aa; }
-        .svc-down { background: #ff475722; color: #ff4757; }
+.badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 4px;
+    font-size: 10px;
+    font-weight: 600;
+}
+.badge.long { background: #14532d; color: #4ade80; }
+.badge.short { background: #7f1d1d; color: #f87171; }
+.badge.win { background: #14532d; color: #4ade80; }
+.badge.loss { background: #7f1d1d; color: #f87171; }
+.badge.ict { background: #1e3a5f; color: #60a5fa; }
+.badge.crash { background: #3b1f4f; color: #c084fc; }
 
-        .equity-chart {
-            background: #111827;
-            border: 1px solid #1e2a3a;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 24px;
-            height: 300px;
-            position: relative;
-        }
-        .equity-chart canvas {
-            width: 100% !important;
-            height: 100% !important;
-        }
+/* Bot status cards */
+.bot-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+    border-bottom: 1px solid #1e293b;
+}
+.bot-row:last-child { border-bottom: none; }
+.bot-name { font-weight: 600; font-size: 13px; }
+.bot-pid { font-size: 11px; color: #64748b; }
 
-        .log-section {
-            background: #111827;
-            border: 1px solid #1e2a3a;
-            border-radius: 12px;
-            padding: 20px;
-            margin-bottom: 24px;
-        }
-        .log-entry {
-            font-family: 'JetBrains Mono', 'Fira Code', monospace;
-            font-size: 12px;
-            padding: 4px 0;
-            color: #8892a6;
-            border-bottom: 1px solid #0a0e17;
-        }
+/* Activity log */
+.log-entry {
+    padding: 6px 0;
+    border-bottom: 1px solid #111827;
+    font-size: 12px;
+    line-height: 1.4;
+}
+.log-time { color: #475569; font-size: 11px; }
 
-        .lesson-card {
-            background: #0d1520;
-            border-left: 3px solid #ffa502;
-            padding: 12px 16px;
-            margin-bottom: 8px;
-            border-radius: 0 8px 8px 0;
-        }
-        .lesson-card .lesson-date {
-            font-size: 11px;
-            color: #4a5568;
-        }
-        .lesson-card .lesson-text {
-            font-size: 13px;
-            color: #e0e6ed;
-            margin-top: 4px;
-        }
-        .improvement-card {
-            background: #0d1520;
-            border-left: 3px solid #00d4aa;
-            padding: 12px 16px;
-            margin-bottom: 8px;
-            border-radius: 0 8px 8px 0;
-        }
-        .improvement-card .imp-tag {
-            display: inline-block;
-            font-size: 10px;
-            padding: 2px 6px;
-            border-radius: 3px;
-            background: #00d4aa22;
-            color: #00d4aa;
-            margin-right: 6px;
-        }
-        .improvement-card .imp-text {
-            font-size: 13px;
-            color: #e0e6ed;
-            margin-top: 4px;
-        }
-        .journal-card {
-            background: #0d1520;
-            padding: 12px 16px;
-            margin-bottom: 8px;
-            border-radius: 8px;
-            border-left: 3px solid #6b7c93;
-        }
-        .journal-card.win { border-left-color: #00d4aa; }
-        .journal-card.loss { border-left-color: #ff4757; }
-        .journal-card .j-header {
-            display: flex;
-            justify-content: space-between;
-            font-size: 13px;
-        }
-        .journal-card .j-detail {
-            font-size: 12px;
-            color: #6b7c93;
-            margin-top: 4px;
-        }
-        .journal-card .j-lesson {
-            font-size: 12px;
-            color: #ffa502;
-            margin-top: 4px;
-            font-style: italic;
-        }
+/* Equity chart */
+.chart-container {
+    width: 100%;
+    height: 180px;
+    position: relative;
+}
+canvas { width: 100%; height: 100%; }
 
-        .footer {
-            text-align: center;
-            color: #4a5568;
-            font-size: 11px;
-            padding: 20px;
-        }
-    </style>
+/* Killzone indicator */
+.kz-bar {
+    display: flex;
+    height: 24px;
+    border-radius: 6px;
+    overflow: hidden;
+    margin-top: 8px;
+}
+.kz-segment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 9px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+.kz-off { background: #1e293b; color: #475569; flex: 14; }
+.kz-london { background: #1a365d; color: #60a5fa; flex: 3; }
+.kz-gap1 { background: #1e293b; color: #475569; flex: 2; }
+.kz-ny { background: #14532d; color: #4ade80; flex: 3; }
+.kz-close { background: #3b1f4f; color: #c084fc; flex: 2; }
+
+.full-width { grid-column: 1 / -1; }
+
+/* WR gauge */
+.gauge {
+    width: 100%;
+    height: 8px;
+    background: #1e293b;
+    border-radius: 4px;
+    margin-top: 6px;
+    overflow: hidden;
+}
+.gauge-fill {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.5s ease;
+}
+
+@media (max-width: 768px) {
+    .grid { grid-template-columns: 1fr; }
+    .card .big-num { font-size: 24px; }
+}
+</style>
 </head>
 <body>
-    <div class="header">
-        <h1>📊 NoviTrader Dashboard</h1>
-        <div class="subtitle">OKX Live Trading Bot Monitor</div>
-        <div class="updated" id="lastUpdate">Loading...</div>
+
+<div class="header">
+    <div>
+        <h1>🤖 NoviTrader Command Centre</h1>
+        <div class="sub" id="last-update">Loading...</div>
+    </div>
+    <div class="status">
+        <span class="dot green" id="status-dot"></span>
+        <span id="status-text" style="font-size:12px;">ONLINE</span>
+    </div>
+</div>
+
+<!-- Row 1: Key metrics -->
+<div class="grid">
+    <div class="card">
+        <h2>💰 Equity</h2>
+        <div class="big-num" id="equity">$—</div>
+        <div class="sub" id="equity-change">—</div>
+    </div>
+    <div class="card">
+        <h2>📈 Open Positions</h2>
+        <div class="big-num blue" id="open-count">0</div>
+        <div class="sub" id="upnl">uPnL: $0.00</div>
+    </div>
+    <div class="card">
+        <h2>🏆 Today's PnL</h2>
+        <div class="big-num" id="today-pnl">$0.00</div>
+        <div class="sub" id="today-trades">0 trades</div>
+    </div>
+    <div class="card">
+        <h2>⏰ Killzone</h2>
+        <div class="big-num" id="killzone">—</div>
+        <div class="kz-bar">
+            <div class="kz-segment kz-off">00-14</div>
+            <div class="kz-segment kz-london" id="kz-london">LONDON</div>
+            <div class="kz-segment kz-gap1">17-19</div>
+            <div class="kz-segment kz-ny" id="kz-ny">NY</div>
+            <div class="kz-segment kz-close" id="kz-close">CLOSE</div>
+        </div>
+    </div>
+</div>
+
+<!-- Row 2: Bot status + Positions -->
+<div class="grid">
+    <div class="card">
+        <h2>🤖 Bot Status</h2>
+        <div id="bot-list">
+            <div class="bot-row">
+                <div>
+                    <span class="badge ict">ICT</span>
+                    <span class="bot-name">ws_ict_live.py</span>
+                </div>
+                <div><span class="dot green"></span> <span class="bot-pid" id="ict-pid">—</span></div>
+            </div>
+            <div class="bot-row">
+                <div>
+                    <span class="badge crash">CRASH</span>
+                    <span class="bot-name">ws_crash_recovery.py</span>
+                </div>
+                <div><span class="dot green"></span> <span class="bot-pid" id="crash-pid">—</span></div>
+            </div>
+        </div>
+        <div style="margin-top:12px;">
+            <h2>📊 All-Time Stats</h2>
+            <div id="alltime-stats" style="font-size:12px;">Loading...</div>
+        </div>
     </div>
 
-    <div class="metrics" id="metricsGrid"></div>
-
-    <h3 class="section-title">📈 Equity History</h3>
-    <div class="equity-chart">
-        <canvas id="equityChart"></canvas>
+    <div class="card" style="grid-column: span 2;">
+        <h2>📋 Open Positions</h2>
+        <table>
+            <thead>
+                <tr><th>Bot</th><th>Pair</th><th>Dir</th><th>Size</th><th>Entry</th><th>Mark</th><th>uPnL</th><th>SL</th><th>TP</th></tr>
+            </thead>
+            <tbody id="positions-table">
+                <tr><td colspan="9" class="dim" style="text-align:center;">No open positions</td></tr>
+            </tbody>
+        </table>
     </div>
+</div>
 
-    <h3 class="section-title">💼 Open Positions</h3>
-    <table class="positions-table" id="positionsTable">
-        <thead>
-            <tr>
-                <th>Pair</th>
-                <th>Side</th>
-                <th>Size</th>
-                <th>Entry</th>
-                <th>Mark</th>
-                <th>uPnL</th>
-                <th>SL</th>
-                <th>TP</th>
-            </tr>
-        </thead>
-        <tbody id="positionsBody"></tbody>
-    </table>
-
-    <h3 class="section-title">🎯 Winrate per Pair</h3>
-    <div class="wr-grid" id="wrGrid"></div>
-
-    <h3 class="section-title">⚙️ Services</h3>
-    <div class="services" id="servicesGrid"></div>
-
-    <h3 class="section-title">📋 Recent Activity</h3>
-    <div class="log-section" id="logSection"></div>
-
-    <h3 class="section-title">🧠 Lessons Learned Today</h3>
-    <div class="log-section" id="lessonsSection"></div>
-
-    <h3 class="section-title">🔧 Improvements Applied</h3>
-    <div class="log-section" id="improvementsSection"></div>
-
-    <h3 class="section-title">📖 Trade Journal</h3>
-    <div class="log-section" id="journalSection"></div>
-
-    <div class="footer">
-        NoviTrader &copy; 2026 — Auto-updated every 20min via heartbeat
+<!-- Row 3: Per-bot stats + Equity chart -->
+<div class="grid">
+    <div class="card">
+        <h2><span class="badge ict">ICT</span> Bot Performance</h2>
+        <div id="ict-stats">
+            <div style="font-size:28px; font-weight:700;" id="ict-pnl">$0.00</div>
+            <div class="sub" id="ict-wr">0 trades | WR: 0%</div>
+            <div class="gauge"><div class="gauge-fill" id="ict-gauge" style="width:0%; background:#60a5fa;"></div></div>
+            <div style="margin-top:10px;" id="ict-pairs"></div>
+        </div>
     </div>
+    <div class="card">
+        <h2><span class="badge crash">CRASH</span> Bot Performance</h2>
+        <div id="crash-stats">
+            <div style="font-size:28px; font-weight:700;" id="crash-pnl">$+17.10</div>
+            <div class="sub" id="crash-wr">134 trades | WR: 43%</div>
+            <div class="gauge"><div class="gauge-fill" id="crash-gauge" style="width:43%; background:#c084fc;"></div></div>
+            <div style="margin-top:10px;" id="crash-pairs"></div>
+        </div>
+    </div>
+    <div class="card">
+        <h2>📈 Equity Curve</h2>
+        <div class="chart-container">
+            <canvas id="equity-chart"></canvas>
+        </div>
+        <div class="sub">Baseline: $1,275.00</div>
+    </div>
+</div>
 
-    <script src="https://cdn.jsdelivr.net/npm/chart.js@4"></script>
-    <script>
-        let chart = null;
+<!-- Row 4: Recent trades + Activity log -->
+<div class="grid">
+    <div class="card full-width">
+        <h2>🔄 Recent Trades</h2>
+        <table>
+            <thead>
+                <tr><th>Time</th><th>Bot</th><th>Pair</th><th>Dir</th><th>Entry</th><th>Exit</th><th>PnL</th><th>Hold</th><th>Result</th></tr>
+            </thead>
+            <tbody id="recent-trades">
+                <tr><td colspan="9" class="dim" style="text-align:center;">Loading...</td></tr>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-        async function loadData() {
-            try {
-                const r = await fetch('data.json?' + Date.now());
-                const d = await r.json();
-                renderAll(d);
-            } catch(e) {
-                document.getElementById('lastUpdate').textContent = 'Error loading data: ' + e.message;
+<script>
+const BASELINE = 1275;
+let equityHistory = [];
+
+function formatPrice(p) {
+    if (p >= 100) return '$' + p.toLocaleString('en', {minimumFractionDigits:2, maximumFractionDigits:2});
+    if (p >= 1) return '$' + p.toFixed(4);
+    if (p >= 0.01) return '$' + p.toFixed(6);
+    return '$' + p.toFixed(8);
+}
+
+function updateKillzone() {
+    const now = new Date();
+    const wib = new Date(now.toLocaleString('en-US', {timeZone: 'Asia/Jakarta'}));
+    const h = wib.getHours();
+    const el = document.getElementById('killzone');
+    
+    if (h >= 14 && h < 17) {
+        el.innerHTML = '<span class="blue">LONDON 🟢</span>';
+        el.className = 'big-num';
+    } else if (h >= 19 && h < 22) {
+        el.innerHTML = '<span class="green">NY OPEN 🟢</span>';
+        el.className = 'big-num';
+    } else if (h >= 22 && h < 24) {
+        el.innerHTML = '<span style="color:#c084fc">CLOSE 🟡</span>';
+        el.className = 'big-num';
+    } else {
+        el.innerHTML = '<span class="dim">OFF HOURS</span>';
+        el.className = 'big-num';
+    }
+}
+
+function drawEquityChart(data) {
+    const canvas = document.getElementById('equity-chart');
+    const ctx = canvas.getContext('2d');
+    const dpr = window.devicePixelRatio || 1;
+    canvas.width = canvas.offsetWidth * dpr;
+    canvas.height = canvas.offsetHeight * dpr;
+    ctx.scale(dpr, dpr);
+    const W = canvas.offsetWidth, H = canvas.offsetHeight;
+    
+    if (!data || data.length < 2) {
+        ctx.fillStyle = '#475569';
+        ctx.font = '12px monospace';
+        ctx.fillText('Not enough data yet', W/2 - 60, H/2);
+        return;
+    }
+    
+    const vals = data.map(d => d.equity);
+    const min = Math.min(...vals, BASELINE) * 0.998;
+    const max = Math.max(...vals) * 1.002;
+    const range = max - min || 1;
+    
+    // Baseline
+    const baseY = H - ((BASELINE - min) / range) * H;
+    ctx.strokeStyle = '#374151';
+    ctx.setLineDash([4, 4]);
+    ctx.beginPath();
+    ctx.moveTo(0, baseY);
+    ctx.lineTo(W, baseY);
+    ctx.stroke();
+    ctx.setLineDash([]);
+    
+    // Equity line
+    ctx.beginPath();
+    ctx.strokeStyle = '#3b82f6';
+    ctx.lineWidth = 2;
+    data.forEach((d, i) => {
+        const x = (i / (data.length - 1)) * W;
+        const y = H - ((d.equity - min) / range) * H;
+        if (i === 0) ctx.moveTo(x, y);
+        else ctx.lineTo(x, y);
+    });
+    ctx.stroke();
+    
+    // Fill gradient
+    const lastX = W, lastY = H - ((data[data.length-1].equity - min) / range) * H;
+    ctx.lineTo(lastX, H);
+    ctx.lineTo(0, H);
+    ctx.closePath();
+    const grad = ctx.createLinearGradient(0, 0, 0, H);
+    grad.addColorStop(0, 'rgba(59,130,246,0.2)');
+    grad.addColorStop(1, 'rgba(59,130,246,0)');
+    ctx.fillStyle = grad;
+    ctx.fill();
+    
+    // Labels
+    ctx.fillStyle = '#64748b';
+    ctx.font = '10px monospace';
+    ctx.fillText('$' + max.toFixed(0), 4, 12);
+    ctx.fillText('$' + min.toFixed(0), 4, H - 4);
+    ctx.fillText('base $' + BASELINE, W - 70, baseY - 4);
+}
+
+async function loadData() {
+    try {
+        const resp = await fetch('data.json?t=' + Date.now());
+        const data = await resp.json();
+        
+        // Update equity
+        const eq = data.equity || 0;
+        const change = ((eq - BASELINE) / BASELINE * 100);
+        document.getElementById('equity').textContent = '$' + eq.toLocaleString('en', {minimumFractionDigits:2});
+        document.getElementById('equity').className = 'big-num ' + (eq > BASELINE ? 'green' : 'red');
+        document.getElementById('equity-change').textContent = 
+            (change >= 0 ? '+' : '') + change.toFixed(1) + '% from $' + BASELINE;
+        
+        // Open positions
+        const positions = data.positions || [];
+        document.getElementById('open-count').textContent = positions.length;
+        const upnl = positions.reduce((s, p) => s + (p.upl || 0), 0);
+        document.getElementById('upnl').textContent = 'uPnL: $' + upnl.toFixed(2);
+        document.getElementById('upnl').className = 'sub ' + (upnl >= 0 ? 'green' : 'red');
+        
+        // Positions table
+        const tbody = document.getElementById('positions-table');
+        if (positions.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="9" class="dim" style="text-align:center">No open positions</td></tr>';
+        } else {
+            tbody.innerHTML = positions.map(p => {
+                const dir = (parseFloat(p.pos) > 0) ? 'LONG' : 'SHORT';
+                const badge = dir === 'LONG' ? 'long' : 'short';
+                const bot = (data.ict_pairs || []).includes(p.instId) ? 'ICT' : 'CRASH';
+                const botBadge = bot === 'ICT' ? 'ict' : 'crash';
+                return `<tr>
+                    <td><span class="badge ${botBadge}">${bot}</span></td>
+                    <td>${p.instId.replace('-USDT-SWAP','')}</td>
+                    <td><span class="badge ${badge}">${dir}</span></td>
+                    <td>${Math.abs(parseFloat(p.pos))}</td>
+                    <td>${formatPrice(parseFloat(p.avgPx || 0))}</td>
+                    <td>${formatPrice(parseFloat(p.markPx || p.last || 0))}</td>
+                    <td class="${parseFloat(p.upl)>=0?'green':'red'}">$${parseFloat(p.upl||0).toFixed(2)}</td>
+                    <td>${p.sl || '—'}</td>
+                    <td>${p.tp || '—'}</td>
+                </tr>`;
+            }).join('');
+        }
+        
+        // Bot PIDs
+        if (data.services) {
+            document.getElementById('ict-pid').textContent = 'PID ' + (data.services.ictbot || '?');
+            document.getElementById('crash-pid').textContent = 'PID ' + (data.services.crashbot || '?');
+        }
+        
+        // ICT stats
+        if (data.ict_stats) {
+            const s = data.ict_stats;
+            document.getElementById('ict-pnl').textContent = '$' + (s.pnl || 0).toFixed(2);
+            document.getElementById('ict-pnl').className = (s.pnl >= 0 ? 'green' : 'red');
+            document.getElementById('ict-wr').textContent = `${s.trades||0} trades | WR: ${(s.wr||0).toFixed(0)}%`;
+            document.getElementById('ict-gauge').style.width = (s.wr||0) + '%';
+            if (s.pairs) {
+                document.getElementById('ict-pairs').innerHTML = Object.entries(s.pairs)
+                    .sort((a,b) => b[1].pnl - a[1].pnl)
+                    .map(([p, d]) => `<div style="font-size:11px;margin:2px 0;">${d.pnl>=0?'✅':'❌'} ${p} ${d.trades}T WR:${d.wr.toFixed(0)}% $${d.pnl.toFixed(2)}</div>`)
+                    .join('');
             }
         }
-
-        function renderAll(d) {
-            // Last update
-            document.getElementById('lastUpdate').textContent = 'Last update: ' + d.updated;
-
-            // Metrics
-            const pnlChange = d.equity - 1275;
-            const pnlPct = (pnlChange / 1275 * 100).toFixed(1);
-            const totalUPnL = d.positions.reduce((s, p) => s + p.upnl, 0);
-            const metricsHtml = `
-                <div class="metric-card">
-                    <div class="label">Equity</div>
-                    <div class="value green">$${d.equity.toFixed(2)}</div>
-                    <div class="change ${pnlChange >= 0 ? 'green' : 'red'}">
-                        ${pnlChange >= 0 ? '+' : ''}$${pnlChange.toFixed(2)} (${pnlPct}%)
-                    </div>
-                </div>
-                <div class="metric-card">
-                    <div class="label">Baseline</div>
-                    <div class="value gray">$1,275</div>
-                    <div class="change gray">Starting capital</div>
-                </div>
-                <div class="metric-card">
-                    <div class="label">Open Positions</div>
-                    <div class="value">${d.positions.length}</div>
-                    <div class="change ${totalUPnL >= 0 ? 'green' : 'red'}">
-                        uPnL: ${totalUPnL >= 0 ? '+' : ''}$${totalUPnL.toFixed(2)}
-                    </div>
-                </div>
-                <div class="metric-card">
-                    <div class="label">Naked Positions</div>
-                    <div class="value ${d.naked === 0 ? 'green' : 'red'}">${d.naked}</div>
-                    <div class="change ${d.naked === 0 ? 'green' : 'red'}">
-                        ${d.naked === 0 ? '✅ All protected' : '⚠️ NEEDS SL/TP'}
-                    </div>
-                </div>
-            `;
-            document.getElementById('metricsGrid').innerHTML = metricsHtml;
-
-            // Positions
-            let posHtml = '';
-            for (const p of d.positions) {
-                const sideClass = p.side === 'long' ? 'badge-long' : 'badge-short';
-                const slBadge = p.sl ? '<span class="badge badge-sl">✅</span>' : '<span class="badge badge-naked">❌</span>';
-                const tpBadge = p.tp ? '<span class="badge badge-sl">✅</span>' : '<span class="badge badge-naked">❌</span>';
-                posHtml += `
-                    <tr>
-                        <td><strong>${p.pair}</strong></td>
-                        <td><span class="badge ${sideClass}">${p.side.toUpperCase()}</span></td>
-                        <td>${p.size}ct</td>
-                        <td>$${p.entry.toFixed(2)}</td>
-                        <td>$${p.mark.toFixed(2)}</td>
-                        <td class="${p.upnl >= 0 ? 'green' : 'red'}">$${p.upnl >= 0 ? '+' : ''}${p.upnl.toFixed(2)}</td>
-                        <td>${slBadge}</td>
-                        <td>${tpBadge}</td>
-                    </tr>`;
+        
+        // Crash stats
+        if (data.crash_stats) {
+            const s = data.crash_stats;
+            document.getElementById('crash-pnl').textContent = '$' + (s.pnl || 0).toFixed(2);
+            document.getElementById('crash-pnl').className = (s.pnl >= 0 ? 'green' : 'red');
+            document.getElementById('crash-wr').textContent = `${s.trades||0} trades | WR: ${(s.wr||0).toFixed(0)}%`;
+            document.getElementById('crash-gauge').style.width = (s.wr||0) + '%';
+            if (s.pairs) {
+                document.getElementById('crash-pairs').innerHTML = Object.entries(s.pairs)
+                    .sort((a,b) => b[1].pnl - a[1].pnl)
+                    .slice(0, 6)
+                    .map(([p, d]) => `<div style="font-size:11px;margin:2px 0;">${d.pnl>=0?'✅':'❌'} ${p} ${d.trades}T WR:${d.wr.toFixed(0)}% $${d.pnl.toFixed(2)}</div>`)
+                    .join('');
             }
-            document.getElementById('positionsBody').innerHTML = posHtml || '<tr><td colspan="8" style="text-align:center;color:#6b7c93">No open positions</td></tr>';
-
-            // Winrate
-            let wrHtml = '';
-            for (const w of d.winrate) {
-                const wr = w.wr !== null ? w.wr : 0;
-                const barColor = wr >= 40 ? '#00d4aa' : wr >= 30 ? '#ffa502' : '#ff4757';
-                const pnlColor = w.pnl >= 0 ? 'green' : 'red';
-                wrHtml += `
-                    <div class="wr-card">
-                        <div class="pair-name">${w.pair}</div>
-                        <div class="wr-value" style="color:${barColor}">${w.wr !== null ? w.wr + '%' : '—'}</div>
-                        <div class="wr-detail">${w.trades}T | ${w.wins}W/${w.losses}L | <span class="${pnlColor}">$${w.pnl >= 0 ? '+' : ''}${w.pnl.toFixed(2)}</span></div>
-                        <div class="wr-bar"><div class="wr-bar-fill" style="width:${wr}%;background:${barColor}"></div></div>
-                    </div>`;
-            }
-            document.getElementById('wrGrid').innerHTML = wrHtml;
-
-            // Services
-            let svcHtml = '';
-            for (const s of d.services) {
-                const cls = s.status === 'up' ? 'svc-up' : 'svc-down';
-                const icon = s.status === 'up' ? '✅' : '❌';
-                svcHtml += `<span class="svc-badge ${cls}">${icon} ${s.name}</span>`;
-            }
-            document.getElementById('servicesGrid').innerHTML = svcHtml;
-
-            // Logs
-            let logHtml = '';
-            for (const l of (d.logs || []).slice(-20)) {
-                logHtml += `<div class="log-entry">${l}</div>`;
-            }
-            document.getElementById('logSection').innerHTML = logHtml || '<div class="log-entry">No recent activity</div>';
-
-            // Lessons
-            let lessonsHtml = '';
-            for (const l of (d.lessons || [])) {
-                lessonsHtml += `
-                    <div class="lesson-card">
-                        <div class="lesson-date">${l.date || ''}</div>
-                        <div class="lesson-text">${l.text}</div>
-                    </div>`;
-            }
-            document.getElementById('lessonsSection').innerHTML = lessonsHtml || '<div class="log-entry" style="color:#6b7c93">No lessons recorded today</div>';
-
-            // Improvements
-            let impHtml = '';
-            for (const i of (d.improvements || [])) {
-                impHtml += `
-                    <div class="improvement-card">
-                        <span class="imp-tag">${i.type || 'fix'}</span>
-                        <span style="font-size:11px;color:#4a5568">${i.date || ''}</span>
-                        <div class="imp-text">${i.text}</div>
-                    </div>`;
-            }
-            document.getElementById('improvementsSection').innerHTML = impHtml || '<div class="log-entry" style="color:#6b7c93">No improvements today</div>';
-
-            // Trade Journal
-            let jHtml = '';
-            for (const t of (d.journal || [])) {
-                const cls = t.pnl >= 0 ? 'win' : 'loss';
-                const pnlStr = t.pnl >= 0 ? `+$${t.pnl.toFixed(2)}` : `-$${Math.abs(t.pnl).toFixed(2)}`;
-                const pnlColor = t.pnl >= 0 ? 'green' : 'red';
-                jHtml += `
-                    <div class="journal-card ${cls}">
-                        <div class="j-header">
-                            <span><strong>${t.pair}</strong> ${t.side.toUpperCase()} ${t.size || ''}ct</span>
-                            <span class="${pnlColor}">${pnlStr}</span>
-                        </div>
-                        <div class="j-detail">Entry: $${t.entry} → Exit: $${t.exit} | ${t.reason || ''} | ${t.time || ''}</div>
-                        ${t.lesson ? `<div class="j-lesson">💡 ${t.lesson}</div>` : ''}
-                    </div>`;
-            }
-            document.getElementById('journalSection').innerHTML = jHtml || '<div class="log-entry" style="color:#6b7c93">No trades closed today</div>';
-
-            // Equity chart
-            renderChart(d.equity_history || []);
         }
-
-        function renderChart(history) {
-            const ctx = document.getElementById('equityChart').getContext('2d');
-            if (chart) chart.destroy();
-
-            const labels = history.map(h => h.time);
-            const data = history.map(h => h.equity);
-
-            chart = new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels,
-                    datasets: [{
-                        label: 'Equity ($)',
-                        data,
-                        borderColor: '#00d4aa',
-                        backgroundColor: 'rgba(0, 212, 170, 0.1)',
-                        fill: true,
-                        tension: 0.3,
-                        pointRadius: 2,
-                        borderWidth: 2,
-                    }, {
-                        label: 'Baseline',
-                        data: data.map(() => 1275),
-                        borderColor: '#4a5568',
-                        borderDash: [5, 5],
-                        pointRadius: 0,
-                        borderWidth: 1,
-                        fill: false,
-                    }]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { labels: { color: '#6b7c93' } }
-                    },
-                    scales: {
-                        x: { ticks: { color: '#4a5568', maxTicksLimit: 12 }, grid: { color: '#1e2a3a' } },
-                        y: { ticks: { color: '#4a5568' }, grid: { color: '#1e2a3a' } }
-                    }
-                }
-            });
+        
+        // All-time combined
+        const ict_pnl = (data.ict_stats||{}).pnl || 0;
+        const crash_pnl = (data.crash_stats||{}).pnl || 0;
+        const ict_trades = (data.ict_stats||{}).trades || 0;
+        const crash_trades = (data.crash_stats||{}).trades || 0;
+        document.getElementById('alltime-stats').innerHTML = 
+            `Total PnL: <b class="${ict_pnl+crash_pnl>=0?'green':'red'}">$${(ict_pnl+crash_pnl).toFixed(2)}</b><br>` +
+            `Total Trades: ${ict_trades + crash_trades}<br>` +
+            `ICT: $${ict_pnl.toFixed(2)} (${ict_trades}T) | CRASH: $${crash_pnl.toFixed(2)} (${crash_trades}T)`;
+        
+        // Recent trades
+        if (data.recent_trades && data.recent_trades.length > 0) {
+            document.getElementById('recent-trades').innerHTML = data.recent_trades.slice(0, 15).map(t => {
+                const badge = t.direction === 'LONG' ? 'long' : 'short';
+                const botBadge = t.bot === 'ICT' ? 'ict' : 'crash';
+                const resBadge = t.pnl >= 0 ? 'win' : 'loss';
+                return `<tr>
+                    <td class="dim">${t.time || '—'}</td>
+                    <td><span class="badge ${botBadge}">${t.bot || '?'}</span></td>
+                    <td>${(t.pair||'').replace('-USDT-SWAP','')}</td>
+                    <td><span class="badge ${badge}">${t.direction}</span></td>
+                    <td>${formatPrice(t.entry||0)}</td>
+                    <td>${formatPrice(t.exit||0)}</td>
+                    <td class="${t.pnl>=0?'green':'red'}">$${(t.pnl||0).toFixed(2)}</td>
+                    <td>${t.hold || '—'}</td>
+                    <td><span class="badge ${resBadge}">${t.pnl>=0?'WIN':'LOSS'}</span></td>
+                </tr>`;
+            }).join('');
         }
+        
+        // Today PnL
+        document.getElementById('today-pnl').textContent = '$' + (data.today_pnl || 0).toFixed(2);
+        document.getElementById('today-pnl').className = 'big-num ' + ((data.today_pnl||0) >= 0 ? 'green' : 'red');
+        document.getElementById('today-trades').textContent = (data.today_trades || 0) + ' trades today';
+        
+        // Timestamp
+        document.getElementById('last-update').textContent = 'Last update: ' + (data.timestamp || 'unknown');
+        
+        // Equity chart
+        if (data.equity_history) {
+            drawEquityChart(data.equity_history);
+        }
+        
+        // Status
+        const age = Date.now() - new Date(data.timestamp).getTime();
+        if (age > 30 * 60 * 1000) {
+            document.getElementById('status-dot').className = 'dot red';
+            document.getElementById('status-text').textContent = 'STALE';
+        } else if (age > 10 * 60 * 1000) {
+            document.getElementById('status-dot').className = 'dot yellow';
+            document.getElementById('status-text').textContent = 'SLOW';
+        }
+        
+    } catch(e) {
+        console.error('Load error:', e);
+    }
+}
 
-        loadData();
-        setInterval(loadData, 60000); // Refresh every 60s
-    </script>
+updateKillzone();
+setInterval(updateKillzone, 60000);
+loadData();
+setInterval(loadData, 60000); // refresh every minute
+</script>
 </body>
 </html>
