@@ -1,15 +1,15 @@
 {
-  "timestamp": "2026-03-29T07:52:36.926013+07:00",
-  "equity": 1371.5070308526856,
+  "timestamp": "2026-03-29T08:22:38.789266+07:00",
+  "equity": 1370.900761408388,
   "baseline": 1275,
   "positions": [
     {
       "instId": "BTC-USDT-SWAP",
       "pos": "0.51",
       "avgPx": "66399.8",
-      "markPx": "66456",
-      "upl": "-0.2866199999999852",
-      "last": "66454.9"
+      "markPx": "66567.7",
+      "upl": "-0.8562899999999704",
+      "last": "66566"
     }
   ],
   "ict_pairs": [
@@ -24,12 +24,18 @@
     "TIA-USDT-SWAP"
   ],
   "ict_stats": {
-    "trades": 11,
+    "trades": 12,
     "wins": 3,
-    "losses": 8,
-    "wr": 27.27272727272727,
+    "losses": 9,
+    "wr": 25.0,
     "pnl": 10.624329999999999,
     "pairs": {
+      "BTC-USDT-SWAP": {
+        "trades": 1,
+        "wins": 0,
+        "pnl": 0.0,
+        "wr": 0.0
+      },
       "TIA-USDT-SWAP": {
         "trades": 3,
         "wins": 1,
@@ -126,6 +132,16 @@
     }
   },
   "recent_trades": [
+    {
+      "bot": "ICT",
+      "pair": "BTC-USDT-SWAP",
+      "direction": "SHORT",
+      "entry": 66399.8,
+      "exit": 0.0,
+      "pnl": 0.0,
+      "hold": "762m",
+      "time": "2026-03-29T08:13"
+    },
     {
       "bot": "ICT",
       "pair": "TIA-USDT-SWAP",
@@ -315,29 +331,15 @@
       "pnl": -0.019499999999999993,
       "hold": "80m",
       "time": "2026-03-23T22:03"
-    },
-    {
-      "bot": "CRASH",
-      "pair": "ETH",
-      "direction": "SHORT",
-      "entry": 2173.05,
-      "exit": 2130.15,
-      "pnl": 0.0418,
-      "hold": "123m",
-      "time": "2026-03-23 22:53"
     }
   ],
-  "today_pnl": 0,
-  "today_trades": 0,
+  "today_pnl": 0.0,
+  "today_trades": 1,
   "services": {
-    "ictbot": "53082",
+    "ictbot": "74572",
     "crashbot": "70967"
   },
   "equity_history": [
-    {
-      "ts": "2026-03-27T06:18:57.350972+07:00",
-      "equity": 1365.1573778338884
-    },
     {
       "ts": "2026-03-27T06:48:59.539791+07:00",
       "equity": 1365.2106657628874
@@ -733,6 +735,10 @@
     {
       "ts": "2026-03-29T07:52:36.926013+07:00",
       "equity": 1371.5070308526856
+    },
+    {
+      "ts": "2026-03-29T08:22:38.789266+07:00",
+      "equity": 1370.900761408388
     }
   ]
 }
